@@ -1,0 +1,12 @@
+
+#dashboard {
+	flex: 1 1 auto;
+
+	@include scroll-pane;
+
+	.card {
+		margin: 16px;
+		padding: 16px;
+		background-color: $theme-card;
+	}
+}

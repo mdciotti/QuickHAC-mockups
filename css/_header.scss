@@ -1,0 +1,137 @@
+
+header {
+	height: $header-height;
+	flex: 0 0 auto;
+	background-color: $theme-color;
+	display: flex;
+	color: $theme-text-light;
+
+	h1 {
+		flex: 0 0 auto;
+		width: $sidebar-width;
+		margin: 0;
+		display: flex;
+		line-height: $header-height;
+
+		img {
+			width: $header-height;
+			height: $header-height;
+			flex: 0 0 auto;
+			// background-color: $midnight-blue;
+		}
+
+		i.fa {
+			flex: 0 0 auto;
+			width: $header-height;
+			line-height: 32px;
+			font-size: 32px;
+			padding: 8px;
+			text-align: center;
+			display: block;
+		}
+
+		.app-title {
+			// margin-left: 16px;
+			flex: 1 1 auto;
+			font-weight: 100;
+			font-size: 26px;
+			display: block;
+
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+
+	nav {
+		flex: 1 1 auto;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			justify-content: flex-start;
+
+			li {
+				display: block;
+				flex: 0 0 auto;
+				width: $header-height;
+				font-size: 24px;
+				line-height: $header-height;
+				text-align: center;
+
+				&:hover:not(.selected) {
+					background-color: $theme-shadow;
+				}
+
+				&.selected {
+					// background-color: lighten($sun-flower, 25%);
+					background-color: $theme-text-dark;
+					color: $theme-color;
+				}
+			}
+		}
+	}
+	.menu {
+		// flex: 1 1 auto;
+		font-size: 16px;
+		// text-align: right;
+		display: flex;
+
+		&:hover {
+			background-color: $theme-shadow;
+		}
+
+		& > i.fa {
+			flex: 0 1 auto;
+			width: $header-height;
+			line-height: $header-height;
+			// padding: 8px;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		ul {
+			flex: 0 1 auto;
+			top: $header-height;
+			background-color: $theme-menu;
+			color: $silver;
+
+			li {
+				&:hover {
+					background-color: $theme-menu-highlight;
+					color: $theme-color;
+
+					i.fa {
+						color: $theme-color;
+					}
+				}
+
+				i.fa {
+					color: lighten($theme-menu, 20%);
+					margin-right: 4px;
+				}
+			}
+		}
+	}
+
+	.student-panel {
+		flex: 0 1 auto;
+		.student {
+			text-align: right;
+			padding: 0 0 0 16px;
+			line-height: $header-height;
+		}
+		ul {
+			width: 100%;
+			// top: $header-height + 16px;
+		}
+	}
+	.options-panel {
+		flex: 0 1 auto;
+		ul {
+			width: $sidebar-width;
+		}
+	}
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>QuickHAC</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<header>
+			<h1>
+				<!-- <img id="logo" /> -->
+				<i class="fa fa-rocket"></i>
+				<span class="app-title">Quick<span>HAC</span></span>
+			</h1>
+			<nav>
+				<ul>
+					<li><i class="fa fa-dashboard"></i></li>
+					<li><i class="fa fa-table"></i></li>
+					<li class="selected"><i class="fa fa-columns"></i></li>
+				</ul>
+			</nav>
+			<span class="flex-space"></span>
+			<div class="student-panel menu menu-split">
+				<span class="student">Gordon Freeman</span>
+				<i class="fa fa-chevron-down"></i>
+				<ul>
+					<li><i class="fa fa-circle" data-color="concrete"></i> Eli Vance</li>
+					<li><i class="fa fa-circle" data-color="emerald"></i> Alyx Vance</li>
+				</ul>
+			</div>
+			<div class="options-panel menu">
+				<i class="fa fa-ellipsis-vertical"></i>
+				<ul>
+					<li><i class="fa fa-cog fa-fw"></i> Preferences</li>
+					<!-- <li><i class="fa fa-group fa-fw"></i> Switch Student</li> -->
+					<li><i class="fa fa-question-circle fa-fw"></i> Help</li>
+					<li><i class="fa fa-bug fa-fw"></i> Submit Issue</li>
+					<li><i class="fa fa-sign-out fa-fw"></i> Sign out</li>
+				</ul>
+			</div>
+		</header>
+		<div id="main-view">
+			<div class="sidebar">
+				<div class="view-bar">
+					<div class="button">1</div>
+					<div class="button selected">2</div>
+					<div class="button">3</div>
+					<div class="button">4</div>
+					<div class="button">5</div>
+					<!-- <div class="menu">
+						<div class="current">Cycle 2</div>
+						<ul>
+							<li>Cycle 1</li>
+							<li>Cycle 2</li>
+							<li>Cycle 3</li>
+							<li>Cycle 4</li>
+							<li>Cycle 5</li>
+							<li>Cycle 6</li>
+						</ul>
+					</div> -->
+					<div class="button">6</div>
+				</div>
+				<ul class="views">
+					<li class="selected">US History</li>
+					<li>Space Tech</li>
+					<li>Algebra I</li>
+					<li>Band 7/8</li>
+					<li>Science 8</li>
+					<li>Spanish 1 B</li>
+					<li>Language Arts 8</li>
+				</ul>
+				<div class="gpa-panel">
+					<span class="gpa">4.00</span>
+				</div>
+			</div>
+			<div class="content">
+				<!-- <div class="message-empty">Select a class from the left to view grades <i class="fa fa-hand-o-left"></i></div> -->
+				<div class="message-updated">Updated 42 minutes ago</div>
+				<div class="card">
+					<h2>Completion/Daily Work <span>40</span></h2>
+					<div class="message-empty">No grades <i class="fa fa-frown-o"></i></div>
+				</div>
+				<div class="card">
+					<h2>Formative <span>40</span></h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Assignment</th>
+								<th>Date Due</th>
+								<th class="grade">Grade</th>
+								<th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Unit 2 Vocab Quiz #2</td>
+								<td>4 Oct</td>
+								<td class="grade">88</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Talk of Tavern Quiz</td>
+								<td>8 Oct</td>
+								<td class="grade">96</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unit 2 Vocab Quiz #3</td>
+								<td>11 Oct</td>
+								<td class="grade">90</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Unit 2 Vocab Quiz #4</td>
+								<td>18 Oct</td>
+								<td class="grade">94</td>
+								<td></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">Average</td>
+								<td class="grade">92</td>
+								<td></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="card">
+					<h2>Summative <span>60</span></h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Assignment</th>
+								<th>Date Due</th>
+								<th class="grade">Grade</th>
+								<th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Unit 2 Test</td>
+								<td>11 Oct</td>
+								<td class="grade">88</td>
+								<td></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">Average</td>
+								<td class="grade">88</td>
+								<td></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="banner promotion">
+					<span class="message-banner"><a href="#!">Let&apos;s keep in touch on Facebook!</a></span>
+					<i class="close fa fa-times-circle"></i>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

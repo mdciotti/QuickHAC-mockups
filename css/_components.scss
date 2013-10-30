@@ -1,0 +1,84 @@
+
+.menu {
+	position: relative;
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+		display: none;
+
+		li {
+			font-size: 16px;
+			padding: 8px;
+			width: 100%;
+		}
+	}
+
+	&:hover ul {
+		display: block;
+	}
+}
+
+.flex-space {
+	flex: 1 1 auto;
+}
+
+i.fa {
+	&[data-color="turquoise"] { color: $turquoise !important; }
+	&[data-color="emerald"] { color: $emerald !important; }
+	&[data-color="peter-river"] { color: $peter-river !important; }
+	&[data-color="amethyst"] { color: $amethyst !important; }
+	&[data-color="sun-flower"] { color: $sun-flower !important; }
+	&[data-color="carrot"] { color: $carrot !important; }
+	&[data-color="pomegranate"] { color: $pomegranate !important; }
+	&[data-color="concrete"] { color: $concrete !important; }
+}
+
+@mixin scroll-pane {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-bottom: 32px;
+	background-color: $theme-light;
+
+	@include banner;
+}
+
+@mixin banner {
+	.banner {
+		position: absolute;
+		bottom: 0;
+		font-size: 16px;
+		width: 100%;
+		padding: 8px 16px;
+		text-align: center;
+		background-color: $silver;
+		color: $theme-text-dark;
+
+		&.promotion {
+			background-color: $peter-river;
+			color: $peter-river-light;
+		}
+
+		.message-banner {
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		.close {
+			float: right;
+
+			&:hover:before {
+				content: $fa-var-times-circle-o;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+
+// http://flatuicolors.com/
+$turquoise: #1abc9c;
+$emerald: #2ecc71;
+$peter-river: #3498db;
+$peter-river-light: lighten($peter-river, 35%);
+$amethyst: #9b59b6;
+$wet-asphalt: #34495e;
+$green-sea: #16a085;
+$nephritis: #27ae60;
+$belize-hole: #2980b9;
+$wisteria: #8e44ad;
+$midnight-blue: #2c3e50;
+$sun-flower: #f1c40f;
+$sun-flower-light: lighten($sun-flower, 25%);
+$carrot: #e67e22;
+$alizarin: #e74c3c;
+$clouds: #ecf0f1;
+$concrete: #95a5a6;
+$orange: #f39c12;
+$pumpkin: #d35400;
+$pomegranate: #c0392b;
+$silver: #bdc3c7;
+$asbestos: #7f8c8d;
+
+$header-height: 48px;
+$sidebar-width: 192px;
+
+$font-stack: 'Lato', 'Helvetica Neue', Helvetica;
+
+$theme-light: $clouds;
+$theme-color: $carrot;
+$theme-complement: $turquoise;
+$theme-complement-shadow: $green-sea;
+$theme-highlight: $orange;
+$theme-shadow: $pumpkin;
+$theme-text-light: $clouds;
+$theme-text-dark: $midnight-blue;
+$theme-text-med: $concrete;
+$theme-text-empty: $silver;
+$theme-menu: $midnight-blue;
+$theme-menu-highlight: $wet-asphalt;
+$theme-menu-text-dark: $asbestos;
+$theme-menu-text-light: $concrete;
+$theme-card: #ffffff;
