@@ -6,8 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
-		<div id="main-view">
-			<div id="login">
+		<div class="main-view">
+			<div class="login">
 				<div class="logo">
 					<i class="fa fa-rocket"></i>
 					<span class="message-welcome">
@@ -16,9 +16,13 @@
 					</span>
 				</div>
 				<div class="login-panel">
-					<input type="text" class="input-username" placeholder="HAC Username" />
-					<input type="password" class="input-password" placeholder="HAC Password" />
-					<input type="text" class="input-id" placeholder="Student ID" />
+					<div class="split-button-group">
+						<label><input type="radio" name="district" value="RRISD" checked /> <span>RRISD</span></label>
+						<label><input type="radio" name="district" value="AISD" /> <span>AISD</span></label>
+					</div>
+					<label class="text-input input-username"><input type="text" placeholder="HAC Username" /><i class="fa fa-user fw"></i></label>
+					<label class="text-input input-password"><input type="password" placeholder="HAC Password" /><i class="fa fa-key fw"></i></label>
+					<label class="text-input input-id"><input type="text" placeholder="Student ID" /><i class="fa fa-credit-card fw"></i></label>
 					<button class="button-login">Login <i class="fa fa-sign-in"></i></button>
 					<a href="#">Lost your password?</a>
 				</div>

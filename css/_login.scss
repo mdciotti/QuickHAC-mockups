@@ -1,7 +1,7 @@
 
 @import '_variables.scss';
 
-#login {
+.login {
 	flex: 0 0 auto;
 	// width: 332px;
 	display: flex;
@@ -49,25 +49,35 @@
 			display: block;
 			position: absolute;
 			left: -16px;
-			top: 20px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
 			width: 0;
 			height: 0;
 			border-right: 16px solid $clouds;
 			border-top: 16px solid transparent;
 			border-bottom: 16px solid transparent;
 		}
-
-		.input-username::after {
-			content: $fa-var-user;
+		& > label {
 			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			line-height: 1;
-			-webkit-font-smoothing: antialiased;
+			position: relative;
+			margin-bottom: 12px;
+
+			input + i.fa {
+				display: block;
+				float: right;
+				position: absolute;
+				top: 8px;
+				right: 12px;
+				color: $theme-card-shadow;
+				font-size: 1.5em;
+			}
+			input:focus + i.fa {
+				color: $theme-color;
+			}
+			input:invalid + i.fa {
+				color: $pomegranate;
+			}
 		}
 
 		input[type="text"], input[type="password"] {
@@ -75,15 +85,22 @@
 			border: 2px solid $theme-card;
 			font-size: 16px;
 			font-weight: 300;
-			padding: 8px 12px;
+			padding: 8px 36px 8px 12px;
 			font-family: $font-stack;
 			display: block;
-			margin-bottom: 12px;
 			outline: none;
-			position: relative;
 
 			&:focus {
-				border: 2px solid $theme-color;
+				border-color: $theme-color;
+			}
+
+			&:disabled {
+				background-color: $theme-light;
+				border-color: $theme-card-shadow;
+				color: $theme-card-shadow;
+			}
+			&:invalid {
+				border-color: $pomegranate;
 			}
 		}
 		button {
@@ -100,7 +117,7 @@
 
 			&:focus:not(:hover) {
 				border: 2px solid $theme-color;
-				background-color: $clouds;
+				background-color: $theme-light;
 				color: $theme-color;
 			}
 			&:hover {
@@ -112,8 +129,41 @@
 				border: 2px solid $theme-shadow;
 			}
 		}
+		.split-button-group {
+			display: flex;
+			margin: -16px -16px 16px -16px;
+			padding: 16px 16px 0 16px;
+			background-color: $theme-card-shadow;
+
+			label {
+				flex: 1 1 auto;
+
+				&:hover span {
+					color: $theme-color;
+				}
+
+				input[type="radio"] {
+					display: none;
+
+					&:checked + span {
+						background-color: $theme-light;
+						color: $theme-color;
+					}
+				}
+				span {
+					display: block;
+					text-align: center;
+					font-size: 16px;
+					font-weight: 400;
+					padding: 8px 12px;
+					// background-color: $theme-light;
+					outline: none;
+					color: $theme-light;
+				}
+			}
+		}
 		a {
-			color: $silver;
+			color: $theme-card-shadow;
 			display: block;
 			text-align: center;
 			outline: none;

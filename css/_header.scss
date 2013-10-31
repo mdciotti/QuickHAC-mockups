@@ -54,12 +54,7 @@ header {
 			justify-content: flex-start;
 
 			li {
-				display: block;
 				flex: 0 0 auto;
-				width: $header-height;
-				font-size: 24px;
-				line-height: $header-height;
-				text-align: center;
 
 				&:hover:not(.selected) {
 					background-color: $theme-shadow;
@@ -68,7 +63,15 @@ header {
 				&.selected {
 					// background-color: lighten($sun-flower, 25%);
 					background-color: $theme-text-dark;
-					color: $theme-color;
+					// color: $theme-color;
+				}
+				a:link, a:visited {
+					display: block;
+					width: $header-height;
+					font-size: 24px;
+					line-height: $header-height;
+					text-align: center;
+					color: $theme-text-light;
 				}
 			}
 		}

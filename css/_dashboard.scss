@@ -1,5 +1,5 @@
 
-#dashboard {
+.dashboard {
 	flex: 1 1 auto;
 
 	@include scroll-pane;
@@ -8,5 +8,12 @@
 		margin: 16px;
 		padding: 16px;
 		background-color: $theme-card;
+
+		h2 {
+			margin: 0;
+			font-weight: 100;
+			font-size: 24px;
+			letter-spacing: 1px;
+		}
 	}
 }

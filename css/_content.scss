@@ -1,3 +1,76 @@
+.sidebar-classes {
+
+	.view-bar {
+		display: flex;
+		height: 32px;
+
+		.button {
+			flex: 1 1 auto;
+			// width: 40px;
+			padding: 6px;
+			background-color: $theme-menu-highlight;
+			color: $theme-menu-text-dark; //lighten($silver, 15%);
+			text-align: center;
+			font-size: 20px;
+			font-weight: 700;
+
+			&:hover:not(.selected) {
+				background-color: lighten($theme-menu-highlight, 10%);
+			}
+
+			&.selected {
+				background-color: $midnight-blue;
+				color: $theme-color;
+			}
+		}
+	}
+
+	.views {
+		li {
+			.average {
+				display: block;
+				float: left;
+				width: 36px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				font-size: 16px;
+				margin: -8px 8px -8px -16px;
+				font-weight: 700;
+				background-color: $theme-menu-highlight;
+				// color: 
+			}
+
+			&.selected .average {
+				background-color: $theme-color;
+				color: $theme-light;
+			}
+		}
+	}
+	.gpa-panel {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 8px;
+		background-color: $theme-menu-highlight;
+		font-weight: 700;
+		font-size: 16px;
+		text-align: center;
+
+		.gpa {
+			font-weight: 300;
+			color: $theme-color;
+
+			&:before {
+				content: 'GPA';
+				font-size: 12px;
+				color: $theme-menu-text-dark;
+				font-weight: 700;
+				margin-right: 8px;
+			}
+		}
+	}
+}
 
 .content {
 	@include scroll-pane;

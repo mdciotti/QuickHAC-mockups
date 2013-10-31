@@ -14,9 +14,9 @@
 			</h1>
 			<nav>
 				<ul>
-					<li><i class="fa fa-dashboard"></i></li>
-					<li><i class="fa fa-table"></i></li>
-					<li class="selected"><i class="fa fa-columns"></i></li>
+					<li class="selected"><a href="dashboard.html"><i class="fa fa-dashboard"></i></a></li>
+					<li><a href="table.html"><i class="fa fa-table"></i></a></li>
+					<li><a href="class.html"><i class="fa fa-columns"></i></a></li>
 				</ul>
 			</nav>
 			<span class="flex-space"></span>
@@ -31,30 +31,36 @@
 			<div class="options-panel menu">
 				<i class="fa fa-ellipsis-vertical"></i>
 				<ul>
-					<li><i class="fa fa-cog fa-fw"></i> Preferences</li>
+					<li><a href="preferences.html"><i class="fa fa-cog fa-fw"></i> Preferences</a></li>
 					<!-- <li><i class="fa fa-group fa-fw"></i> Switch Student</li> -->
-					<li><i class="fa fa-question-circle fa-fw"></i> Help</li>
-					<li><i class="fa fa-bug fa-fw"></i> Submit Issue</li>
-					<li><i class="fa fa-sign-out fa-fw"></i> Sign out</li>
+					<li><a href="https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#question"><i class="fa fa-question-circle fa-fw"></i> Help</a></li>
+					<li><a href="https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#bug"><i class="fa fa-bug fa-fw"></i> Submit Issue</a></li>
+					<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sign out</a></li>
 				</ul>
 			</div>
 		</header>
-		<div id="main-view">
-			<div id="dashboard">
+		<div class="main-view">
+			<div class="dashboard">
 				<div class="card">
-					
+					<h2>Trends</h2>
+					<div id="plot-trend"></div>
 				</div>
-				<div class="card">
-					
-				</div>
-				<div class="card">
-					
-				</div>
-				<div class="banner promotion">
-					<span class="message-banner"><a href="#!">Let&apos;s keep in touch on Facebook!</a></span>
-					<i class="close fa fa-times-circle"></i>
+				<div class="split">
+					<div class="card">
+						<h2>Recent Grades</h2>
+					</div>
+					<div class="card">
+						<h2>GPA</h2>
+
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="banner promotion">
+			<span class="message-banner"><a href="#!">Let&apos;s keep in touch on Facebook!</a></span>
+			<i class="close fa fa-times-circle"></i>
+		</div>
+		<!-- // <script type="text/javascript" src="lib/raphael.js"></script> -->
+		<!-- // <script type="text/javascript" src="scripts/trend.js"></script> -->
 	</body>
 </html>

@@ -14,9 +14,9 @@
 			</h1>
 			<nav>
 				<ul>
-					<li><i class="fa fa-dashboard"></i></li>
-					<li><i class="fa fa-table"></i></li>
-					<li class="selected"><i class="fa fa-columns"></i></li>
+					<li><a href="dashboard.html"><i class="fa fa-dashboard"></i></a></li>
+					<li><a href="table.html"><i class="fa fa-table"></i></a></li>
+					<li class="selected"><a href="class.html"><i class="fa fa-columns"></i></a></li>
 				</ul>
 			</nav>
 			<span class="flex-space"></span>
@@ -39,8 +39,8 @@
 				</ul>
 			</div>
 		</header>
-		<div id="main-view">
-			<div class="sidebar">
+		<div class="main-view">
+			<div class="sidebar sidebar-classes">
 				<div class="view-bar">
 					<div class="button">1</div>
 					<div class="button selected">2</div>
@@ -61,13 +61,13 @@
 					<div class="button">6</div>
 				</div>
 				<ul class="views">
-					<li class="selected">US History</li>
-					<li>Space Tech</li>
-					<li>Algebra I</li>
-					<li>Band 7/8</li>
-					<li>Science 8</li>
-					<li>Spanish 1 B</li>
-					<li>Language Arts 8</li>
+					<li class="selected"><span class="average">88</span> US History</li>
+					<li><span class="average">84</span> Space Tech</li>
+					<li><span class="average">92</span> Algebra I</li>
+					<li><span class="average">99</span> Band 7/8</li>
+					<li><span class="average">90</span> Science 8</li>
+					<li><span class="average">87</span> Spanish 1 B</li>
+					<li><span class="average">88</span> Language Arts 8</li>
 				</ul>
 				<div class="gpa-panel">
 					<span class="gpa">4.00</span>
@@ -77,7 +77,7 @@
 				<!-- <div class="message-empty">Select a class from the left to view grades <i class="fa fa-hand-o-left"></i></div> -->
 				<div class="message-updated">Updated 42 minutes ago</div>
 				<div class="card">
-					<h2>Completion/Daily Work <span>40</span></h2>
+					<h2>Completion/Daily Work <span>0</span></h2>
 					<div class="message-empty">No grades <i class="fa fa-frown-o"></i></div>
 				</div>
 				<div class="card">
@@ -154,11 +154,11 @@
 						</tfoot>
 					</table>
 				</div>
-				<div class="banner promotion">
-					<span class="message-banner"><a href="#!">Let&apos;s keep in touch on Facebook!</a></span>
-					<i class="close fa fa-times-circle"></i>
-				</div>
 			</div>
+		</div>
+		<div class="banner promotion">
+			<span class="message-banner"><a href="#!">Let&apos;s keep in touch on Facebook!</a></span>
+			<i class="close fa fa-times-circle"></i>
 		</div>
 	</body>
 </html>
