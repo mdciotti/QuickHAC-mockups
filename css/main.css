@@ -2227,11 +2227,11 @@ header nav ul li {
 }
 
 header nav ul li:hover:not(.selected) {
-  background-color: #d35400;
+  background-color: #f39c12;
 }
 
 header nav ul li.selected {
-  background-color: #2c3e50;
+  background-color: #d35400;
 }
 
 header nav ul li a:link,
@@ -2254,7 +2254,7 @@ header .menu {
 }
 
 header .menu:hover {
-  background-color: #d35400;
+  background-color: #f39c12;
 }
 
 header .menu > i.fa {

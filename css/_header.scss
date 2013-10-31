@@ -57,12 +57,12 @@ header {
 				flex: 0 0 auto;
 
 				&:hover:not(.selected) {
-					background-color: $theme-shadow;
+					background-color: $theme-highlight;
 				}
 
 				&.selected {
 					// background-color: lighten($sun-flower, 25%);
-					background-color: $theme-text-dark;
+					background-color: $theme-shadow;
 					// color: $theme-color;
 				}
 				a:link, a:visited {
@@ -83,7 +83,7 @@ header {
 		display: flex;
 
 		&:hover {
-			background-color: $theme-shadow;
+			background-color: $theme-highlight;
 		}
 
 		& > i.fa {
