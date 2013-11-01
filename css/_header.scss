@@ -23,23 +23,16 @@ header {
 		i.fa {
 			flex: 0 0 auto;
 			width: $header-height;
-			line-height: 32px;
-			font-size: 32px;
-			padding: 8px;
+			line-height: $header-height - $gutter-width;
+			font-size: $header-height - $gutter-width;
+			padding: $gutter-width / 2;
 			text-align: center;
 			display: block;
 		}
 
-		.app-title {
+		.app-name {
 			// margin-left: 16px;
 			flex: 1 1 auto;
-			font-weight: 100;
-			font-size: 26px;
-			display: block;
-
-			span {
-				font-weight: 700;
-			}
 		}
 	}
 
@@ -59,6 +52,9 @@ header {
 				&:hover:not(.selected) {
 					background-color: $theme-highlight;
 				}
+				&:active i.fa {
+					transform: scale(0.9);
+				}
 
 				&.selected {
 					// background-color: lighten($sun-flower, 25%);
@@ -68,7 +64,7 @@ header {
 				a:link, a:visited {
 					display: block;
 					width: $header-height;
-					font-size: 24px;
+					font-size: $header-icon-size;
 					line-height: $header-height;
 					text-align: center;
 					color: $theme-text-light;
@@ -78,12 +74,16 @@ header {
 	}
 	.menu {
 		// flex: 1 1 auto;
-		font-size: 16px;
+		font-size: $font-size-base;
 		// text-align: right;
 		display: flex;
 
 		&:hover {
 			background-color: $theme-highlight;
+
+			ul {
+				top: $header-height;
+			}
 		}
 
 		& > i.fa {
@@ -91,13 +91,13 @@ header {
 			width: $header-height;
 			line-height: $header-height;
 			// padding: 8px;
-			font-size: 24px;
+			font-size: $header-icon-size;
 			text-align: center;
 		}
 
 		ul {
 			flex: 0 1 auto;
-			top: $header-height;
+			top: $header-height - $gutter-width;
 			background-color: $theme-menu;
 			color: $silver;
 
@@ -123,7 +123,7 @@ header {
 		flex: 0 1 auto;
 		.student {
 			text-align: right;
-			padding: 0 0 0 16px;
+			padding: 0 0 0 $gutter-width;
 			line-height: $header-height;
 		}
 		ul {
@@ -134,7 +134,7 @@ header {
 	.options-panel {
 		flex: 0 1 auto;
 		ul {
-			width: $sidebar-width;
+			width: 3 / 4 * $sidebar-width;
 		}
 	}
 }

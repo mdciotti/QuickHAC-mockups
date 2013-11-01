@@ -1745,6 +1745,40 @@
   content: "\f195";
 }
 
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 50%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  30%, 70% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 50%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  30%, 70% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
 .login {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -1759,6 +1793,11 @@
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .login .logo {
@@ -1776,7 +1815,7 @@
   display: block;
   height: 128px;
   color: #e67e22;
-  text-shadow: 0 2px #16a085;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .login .logo .message-welcome {
@@ -1787,118 +1826,31 @@
   line-height: 1.2;
 }
 
-.login .logo .message-welcome .app-name {
-  display: block;
-  font-weight: 100;
-}
-
-.login .logo .message-welcome .app-name span {
-  font-weight: 700;
-}
-
 .login .login-panel {
-  background-color: #ecf0f1;
-  padding: 16px;
   position: relative;
-  -webkit-box-shadow: 0 2px #16a085;
-  box-shadow: 0 2px #16a085;
-}
-
-.login .login-panel::before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: -16px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-right: 16px solid #ecf0f1;
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
-}
-
-.login .login-panel > label {
-  display: block;
-  position: relative;
-  margin-bottom: 12px;
-}
-
-.login .login-panel > label input + i.fa {
-  display: block;
-  float: right;
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  color: #bdc3c7;
-  font-size: 1.5em;
-}
-
-.login .login-panel > label input:focus + i.fa {
-  color: #e67e22;
-}
-
-.login .login-panel > label input:invalid + i.fa {
-  color: #c0392b;
-}
-
-.login .login-panel input[type="text"],
-.login .login-panel input[type="password"] {
-  background-color: white;
-  border: 2px solid white;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 8px 36px 8px 12px;
-  font-family: "Lato", "Helvetica Neue", Helvetica;
-  display: block;
-  outline: none;
-}
-
-.login .login-panel input[type="text"]:focus,
-.login .login-panel input[type="password"]:focus {
-  border-color: #e67e22;
-}
-
-.login .login-panel input[type="text"]:disabled,
-.login .login-panel input[type="password"]:disabled {
-  background-color: #ecf0f1;
-  border-color: #bdc3c7;
-  color: #bdc3c7;
-}
-
-.login .login-panel input[type="text"]:invalid,
-.login .login-panel input[type="password"]:invalid {
-  border-color: #c0392b;
-}
-
-.login .login-panel button {
-  display: block;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 8px 12px;
-  border: 2px solid #e67e22;
-  background-color: #e67e22;
-  margin: 0 0 12px 0;
-  width: 100%;
-  color: #ecf0f1;
-  outline: none;
-}
-
-.login .login-panel button:focus:not(:hover) {
-  border: 2px solid #e67e22;
-  background-color: #ecf0f1;
-  color: #e67e22;
-}
-
-.login .login-panel button:hover {
-  background-color: #eb9950;
-  border: 2px solid #eb9950;
-}
-
-.login .login-panel button:active {
-  background-color: #d35400;
-  border: 2px solid #d35400;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transform: perspective(100px) translateZ(0px);
+  -ms-transform: perspective(100px) translateZ(0px);
+  transform: perspective(100px) translateZ(0px);
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .login .login-panel .split-button-group {
@@ -1907,9 +1859,19 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  margin: -16px -16px 16px -16px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
   padding: 16px 16px 0 16px;
-  background-color: #bdc3c7;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 100%;
 }
 
 .login .login-panel .split-button-group label {
@@ -1928,26 +1890,181 @@
   display: none;
 }
 
+.login .login-panel .split-button-group label input[type="radio"]:disabled + span {
+  color: #ecf0f1;
+}
+
 .login .login-panel .split-button-group label input[type="radio"]:checked + span {
   background-color: #ecf0f1;
-  color: #e67e22;
+  color: #2c3e50;
 }
 
 .login .login-panel .split-button-group label span {
   display: block;
   text-align: center;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   padding: 8px 12px;
   outline: none;
   color: #ecf0f1;
 }
 
-.login .login-panel a {
+.login .login-panel .input-group {
+  background-color: #ecf0f1;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+  -moz-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.login .login-panel .input-group::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-right: 16px solid #ecf0f1;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+
+.login .login-panel .input-group > label {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.login .login-panel .input-group > label input + i.fa {
+  display: block;
+  float: right;
+  position: absolute;
+  top: 8px;
+  right: 12px;
   color: #bdc3c7;
+  font-size: 1.5em;
+}
+
+.login .login-panel .input-group > label input:focus + i.fa {
+  color: #1abc9c;
+}
+
+.login .login-panel .input-group > label input.invalid + i.fa {
+  color: #c0392b;
+}
+
+.login .login-panel .input-group > label:last-child {
+  margin-bottom: 0;
+}
+
+.login .login-panel input[type="text"],
+.login .login-panel input[type="password"] {
+  width: 100%;
+  background-color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  color: #2c3e50;
+  font-weight: 300;
+  padding: 8px 36px 8px 12px;
+  font-family: "Lato", "Helvetica Neue", Helvetica;
+  display: block;
+  outline: none;
+}
+
+.login .login-panel input[type="text"]:disabled,
+.login .login-panel input[type="password"]:disabled {
+  background-color: #ecf0f1;
+  border-color: #bdc3c7;
+  color: #bdc3c7;
+}
+
+.login .login-panel input[type="text"]:focus,
+.login .login-panel input[type="password"]:focus {
+  border-color: #1abc9c;
+}
+
+.login .login-panel input[type="text"].invalid,
+.login .login-panel input[type="password"].invalid {
+  border-color: #e74c3c;
+}
+
+.login .login-panel button {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-ordinal-group: 4;
+  -webkit-order: 3;
+  -moz-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 12px 16px;
+  border: none;
+  background-color: #e67e22;
+  opacity: 0.5;
+  margin: 0;
+  width: -webkit-calc(100% - 8px);
+  width: calc(100% - 8px);
+  color: #ecf0f1;
+  outline: none;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-16px);
+  -ms-transform: translateY(-16px);
+  transform: translateY(-16px);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.login .login-panel button:focus:not(:hover) {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 0.8;
+}
+
+.login .login-panel button:hover:not(:disabled) {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 0.8;
+}
+
+.login .login-panel button:active:not(:disabled) {
+  background-color: #d35400;
+}
+
+.login .login-panel button:disabled {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.login .login-panel a {
+  color: #6bebd1;
   display: block;
   text-align: center;
   outline: none;
+  display: none;
 }
 
 .login .login-panel a:hover,
@@ -1957,6 +2074,34 @@
 
 .login .login-panel a:active {
   color: #2c3e50;
+}
+
+.login .login-panel.busy {
+  -webkit-transform: perspective(100px) translateZ(-10px);
+  -ms-transform: perspective(100px) translateZ(-10px);
+  transform: perspective(100px) translateZ(-10px);
+  opacity: 0.75;
+}
+
+.login .login-panel.error {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.app-name {
+  font-weight: 100;
+  font-size: 26px;
+  display: block;
+}
+
+.app-name span {
+  font-weight: 700;
 }
 
 .split {
@@ -1995,11 +2140,13 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  z-index: 10;
+  z-index: -1;
   right: 0;
   top: 0;
   overflow: hidden;
-  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out, top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.5s ease-out, top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .menu ul li a {
@@ -2012,7 +2159,8 @@
 }
 
 .menu:hover ul {
-  display: block;
+  z-index: 10;
+  opacity: 1;
 }
 
 .flex-space {
@@ -2179,19 +2327,12 @@ header h1 i.fa {
   display: block;
 }
 
-header h1 .app-title {
+header h1 .app-name {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   -moz-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  font-weight: 100;
-  font-size: 26px;
-  display: block;
-}
-
-header h1 .app-title span {
-  font-weight: 700;
 }
 
 header nav {
@@ -2230,6 +2371,12 @@ header nav ul li:hover:not(.selected) {
   background-color: #f39c12;
 }
 
+header nav ul li:active i.fa {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
 header nav ul li.selected {
   background-color: #d35400;
 }
@@ -2257,6 +2404,10 @@ header .menu:hover {
   background-color: #f39c12;
 }
 
+header .menu:hover ul {
+  top: 48px;
+}
+
 header .menu > i.fa {
   -webkit-box-flex: 0;
   -webkit-flex: 0 1 auto;
@@ -2275,7 +2426,7 @@ header .menu ul {
   -moz-box-flex: 0;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  top: 48px;
+  top: 32px;
   background-color: #2c3e50;
   color: #bdc3c7;
 }
@@ -2321,7 +2472,7 @@ header .options-panel {
 }
 
 header .options-panel ul {
-  width: 192px;
+  width: 144px;
 }
 
 .sidebar-classes .view-bar {
@@ -2576,10 +2727,22 @@ a:visited {
   display: flex;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #1abc9c;
+  background-color: #16a085;
+  background-image: url("../images/bg.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -moz-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.main-view canvas#bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }

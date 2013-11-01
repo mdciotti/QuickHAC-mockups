@@ -35,8 +35,18 @@ $asbestos: #7f8c8d;
 
 $header-height: 48px;
 $sidebar-width: 192px;
+$gutter-width: 16px;
+$header-icon-size: 24px;
 
 $font-stack: 'Lato', 'Helvetica Neue', Helvetica;
+$font-size-base: 16px;
+$font-size-sidebar: 16px;
+$font-weight-base: 300;
+$font-weight-heavy: 300;
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 $theme-light: $clouds;
 $theme-color: $carrot;
@@ -54,3 +64,9 @@ $theme-menu-text-dark: $asbestos;
 $theme-menu-text-light: $concrete;
 $theme-card: #ffffff;
 $theme-card-shadow: $silver;
+
+@-webkit-keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	10%, 50%, 90% { transform: translateX(-10px); }
+	30%, 70% { transform: translateX(10px); }
+}

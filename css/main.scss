@@ -61,6 +61,17 @@ a:link, a:visited {
 	display: flex;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	background-color: $theme-complement;
+	background-color: $theme-complement-shadow;
+	background-image: url('../images/bg.png');
+	background-size: cover;
+	background-position: center;
 	justify-content: center;
+
+	canvas#bg {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
 }

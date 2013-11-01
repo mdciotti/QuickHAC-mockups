@@ -6,10 +6,11 @@
 	// width: 332px;
 	display: flex;
 	align-self: center;
+	align-items: center;
 
 	.logo {
 		flex: 0 0 auto;
-		margin-right: 32px;
+		margin-right: 2 * $gutter-width;
 		text-align: center;
 
 		i.fa {
@@ -18,122 +19,41 @@
 			// width: 64px;
 			height: 128px;
 			color: $theme-color;
-			text-shadow: 0 2px $theme-complement-shadow;
+			// text-shadow: 0 2px $theme-complement-shadow;
+			text-shadow: 0 2px rgba(0,0,0,0.2);
 		}
 
 		.message-welcome {
 			display: block;
 			font-size: 24px;
-			margin-top: 16px;
+			margin-top: $gutter-width;
 			color: $clouds;
 			line-height: 1.2;
-
-			.app-name {
-				display: block;
-				font-weight: 100;
-				span {
-					font-weight: 700;
-				}
-			}
 		}
 	}
 
 	.login-panel {
-		background-color: $theme-light;
-		padding: 16px;
+		// background-color: $theme-light;
+		// padding: $gutter-width;
 		position: relative;
-		box-shadow: 0 2px $theme-complement-shadow;
+		// box-shadow: 0 2px $theme-complement-shadow;
+		// box-shadow: 0 2px rgba(0,0,0,0.2);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transform: perspective(100px) translateZ(0px);
+		opacity: 1;
+		transition: transform 0.5s $ease-out-back, opacity 0.5s $ease-out-expo;
 
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			left: -16px;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-			width: 0;
-			height: 0;
-			border-right: 16px solid $clouds;
-			border-top: 16px solid transparent;
-			border-bottom: 16px solid transparent;
-		}
-		& > label {
-			display: block;
-			position: relative;
-			margin-bottom: 12px;
-
-			input + i.fa {
-				display: block;
-				float: right;
-				position: absolute;
-				top: 8px;
-				right: 12px;
-				color: $theme-card-shadow;
-				font-size: 1.5em;
-			}
-			input:focus + i.fa {
-				color: $theme-color;
-			}
-			input:invalid + i.fa {
-				color: $pomegranate;
-			}
-		}
-
-		input[type="text"], input[type="password"] {
-			background-color: $theme-card;
-			border: 2px solid $theme-card;
-			font-size: 16px;
-			font-weight: 300;
-			padding: 8px 36px 8px 12px;
-			font-family: $font-stack;
-			display: block;
-			outline: none;
-
-			&:focus {
-				border-color: $theme-color;
-			}
-
-			&:disabled {
-				background-color: $theme-light;
-				border-color: $theme-card-shadow;
-				color: $theme-card-shadow;
-			}
-			&:invalid {
-				border-color: $pomegranate;
-			}
-		}
-		button {
-			display: block;
-			font-size: 16px;
-			font-weight: 300;
-			padding: 8px 12px;
-			border: 2px solid $theme-color;
-			background-color: $theme-color;
-			margin: 0 0 12px 0;
-			width: 100%;
-			color: $clouds;
-			outline: none;
-
-			&:focus:not(:hover) {
-				border: 2px solid $theme-color;
-				background-color: $theme-light;
-				color: $theme-color;
-			}
-			&:hover {
-				background-color: lighten($theme-color, 10%);
-				border: 2px solid lighten($theme-color, 10%);
-			}
-			&:active {
-				background-color: $theme-shadow;
-				border: 2px solid $theme-shadow;
-			}
-		}
 		.split-button-group {
 			display: flex;
-			margin: -16px -16px 16px -16px;
-			padding: 16px 16px 0 16px;
-			background-color: $theme-card-shadow;
+			flex: 0 0 auto;
+			order: 1;
+			// margin: (-$gutter-width) (-$gutter-width) $gutter-width (-$gutter-width);
+			padding: $gutter-width $gutter-width 0 $gutter-width;
+			// background-color: $theme-card-shadow;
+			background-color: rgba(255,255,255,0.25);
+			width: 100%;
 
 			label {
 				flex: 1 1 auto;
@@ -145,16 +65,19 @@
 				input[type="radio"] {
 					display: none;
 
+					&:disabled + span {
+						color: $theme-light;
+					}
 					&:checked + span {
 						background-color: $theme-light;
-						color: $theme-color;
+						color: $theme-text-dark;
 					}
 				}
 				span {
 					display: block;
 					text-align: center;
-					font-size: 16px;
-					font-weight: 400;
+					font-size: $font-size-base;
+					font-weight: $font-weight-heavy;
 					padding: 8px 12px;
 					// background-color: $theme-light;
 					outline: none;
@@ -162,11 +85,126 @@
 				}
 			}
 		}
+
+		.input-group {
+			background-color: $theme-light;
+			box-shadow: 0 2px rgba(0,0,0,0.15);
+			padding: $gutter-width;
+			position: relative;
+			width: 100%;
+			flex: 0 0 auto;
+			order: 2;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -$gutter-width;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 0;
+				height: 0;
+				border-right: 16px solid $clouds;
+				border-top: 16px solid transparent;
+				border-bottom: 16px solid transparent;
+			}
+
+			& > label {
+				display: block;
+				position: relative;
+				margin-bottom: 12px;
+
+				input + i.fa {
+					display: block;
+					float: right;
+					position: absolute;
+					top: 8px;
+					right: 12px;
+					color: $theme-card-shadow;
+					font-size: 1.5em;
+				}
+				input:focus + i.fa {
+					color: $theme-complement;
+				}
+				input.invalid + i.fa {
+					color: $pomegranate;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			background-color: $theme-card;
+			border: 2px solid $theme-card;
+			font-size: $font-size-base;
+			color: $theme-text-dark;
+			font-weight: $font-weight-base;
+			padding: 8px 36px 8px 12px;
+			font-family: $font-stack;
+			display: block;
+			outline: none;
+
+			&:disabled {
+				background-color: $theme-light;
+				border-color: $theme-card-shadow;
+				color: $theme-card-shadow;
+			}
+			&:focus {
+				border-color: $theme-complement;
+			}
+			&.invalid {
+				border-color: $alizarin;
+			}
+		}
+		button {
+			flex: 0 0 auto;
+			order: 3;
+			display: block;
+			font-size: $font-size-base;
+			font-weight: $font-weight-base;
+			padding: 12px 16px;
+			border: none;
+			background-color: $theme-color;
+			opacity: 0.5;
+			margin: 0;
+			width: calc(100% - 8px);
+			color: $clouds;
+			outline: none;
+			box-shadow: 0 2px rgba(0,0,0,0.15);
+			transform: translateY(-16px);
+			transition: transform 0.5s $ease-out-expo, opacity 0.5s $ease-out-expo;
+
+			&:focus:not(:hover) {
+				// background-color: $theme-light;
+				// color: $theme-color;
+				transform: translateY(0px);
+				opacity: 0.8;
+			}
+			&:hover:not(:disabled) {
+				transform: translateY(0px);
+				opacity: 0.8;
+			}
+			&:active:not(:disabled) {
+				background-color: $theme-shadow;
+			}
+			&:disabled {
+				transform: translateY(-100%);
+				// background-color: $theme-card;
+				// color: $theme-complement;
+				opacity: 0;
+			}
+		}
 		a {
-			color: $theme-card-shadow;
+			color: lighten($theme-complement, 25%);
 			display: block;
 			text-align: center;
 			outline: none;
+			display: none;
 
 			&:hover, &:focus {
 				color: $theme-color;
@@ -174,6 +212,22 @@
 			&:active {
 				color: $midnight-blue;
 			}
+		}
+
+		&.busy {
+			transform: perspective(100px) translateZ(-10px);
+			opacity: 0.75;
+
+			button {
+				// transform: translateY(0px);
+				// opacity: 0.8;
+			}
+		}
+		&.error {
+			animation-name: shake;
+			animation-duration: 0.5s;
+			animation-delay: 0.5s;
+			animation-timing-function: linear;
 		}
 	}
 }
