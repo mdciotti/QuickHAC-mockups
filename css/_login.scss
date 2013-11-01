@@ -214,9 +214,36 @@
 			}
 		}
 
+		&::after {
+			box-sizing: border-box;
+			content: '';
+			border: 14px dotted $theme-complement;
+			border-radius: 50px;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			width: 89px;
+			height: 89px;
+			animation-name: spin;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			transition: all 0.5s linear;
+			opacity: 0;
+		}
+
 		&.busy {
 			transform: perspective(100px) translateZ(-10px);
-			opacity: 0.75;
+			opacity: 0.5;
+
+			&::after {
+				z-index: 10;
+				opacity: 1;
+			}
 
 			button {
 				// transform: translateY(0px);
