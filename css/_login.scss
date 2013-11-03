@@ -179,6 +179,14 @@
 			transform: translateY(-16px);
 			transition: transform 0.5s $ease-out-expo, opacity 0.5s $ease-out-expo;
 
+			.available {
+				display: block;
+			}
+
+			.busy {
+				display: none;
+			}
+
 			&:focus:not(:hover) {
 				// background-color: $theme-light;
 				// color: $theme-color;
@@ -221,6 +229,7 @@
 			border-radius: 50px;
 			display: block;
 			position: absolute;
+			z-index: -1;
 			top: 0;
 			left: 0;
 			bottom: 0;
@@ -241,13 +250,23 @@
 			opacity: 0.5;
 
 			&::after {
-				z-index: 10;
+				z-index: 100;
 				opacity: 1;
 			}
 
 			button {
-				// transform: translateY(0px);
-				// opacity: 0.8;
+				transform: translateY(0px);
+				opacity: 0.8;
+				background-color: $theme-card;
+				color: $theme-card-shadow;
+
+				.available {
+					display: none;
+				}
+
+				.busy {
+					display: block;
+				}
 			}
 		}
 		&.error {
