@@ -1,0 +1,32 @@
+{>main/}
+
+{<header}
+{>header/}
+{/header}
+
+{<sidebar}
+<div class="sidebar">
+	<ul class="views">
+		{#categories}
+		<li {@eq key=name value=category}class="selected"{/eq}><a href="#!/{route}"><i class="{icon}"></i> {name}</a></li>
+		{/categories}
+	</ul>
+</div>
+{/sidebar}
+
+{<main_view}
+<div class="content">
+	{#sections}
+	<div class="card">
+		<h2>{title}</h2>
+		{#options}
+		<label><input type="checkbox" /> {name}</label>
+		{/options}
+	</div>
+	{/sections}
+</div>
+{/main_view}
+
+{<banner}
+{>banner/}
+{/banner}

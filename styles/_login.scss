@@ -13,14 +13,12 @@
 		margin-right: 2 * $gutter-width;
 		text-align: center;
 
-		i.fa {
+		i {
 			font-size: 128px;
 			display: block;
-			// width: 64px;
 			height: 128px;
-			color: $theme-color;
-			// text-shadow: 0 2px $theme-complement-shadow;
-			text-shadow: 0 2px rgba(0,0,0,0.2);
+			color: $app-icon;
+			// text-shadow: 0 2px rgba(0,0,0,0.2);
 		}
 
 		.message-welcome {
@@ -33,11 +31,7 @@
 	}
 
 	.login-panel {
-		// background-color: $theme-light;
-		// padding: $gutter-width;
 		position: relative;
-		// box-shadow: 0 2px $theme-complement-shadow;
-		// box-shadow: 0 2px rgba(0,0,0,0.2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -49,28 +43,28 @@
 			display: flex;
 			flex: 0 0 auto;
 			order: 1;
-			// margin: (-$gutter-width) (-$gutter-width) $gutter-width (-$gutter-width);
 			padding: $gutter-width $gutter-width 0 $gutter-width;
-			// background-color: $theme-card-shadow;
-			background-color: rgba(255,255,255,0.25);
+			background-color: $panel-tabs-bg;
 			width: 100%;
 
 			label {
 				flex: 1 1 auto;
 
 				&:hover span {
-					color: $theme-color;
+					background: $panel-tabs-hover-bg;
+					color: $panel-tabs-hover-text;
 				}
 
 				input[type="radio"] {
 					display: none;
 
 					&:disabled + span {
-						color: $theme-light;
+						color: $panel-input-disabled-border;
 					}
 					&:checked + span {
-						background-color: $theme-light;
-						color: $theme-text-dark;
+						background-color: $panel-bg;
+						font-weight: $font-weight-heavy;
+						color: $panel-input-focus-border;
 					}
 				}
 				span {
@@ -79,15 +73,14 @@
 					font-size: $font-size-base;
 					font-weight: $font-weight-heavy;
 					padding: 8px 12px;
-					// background-color: $theme-light;
 					outline: none;
-					color: $theme-light;
+					color: $panel-tabs-text;
 				}
 			}
 		}
 
 		.input-group {
-			background-color: $theme-light;
+			background-color: $panel-bg;
 			box-shadow: 0 2px rgba(0,0,0,0.15);
 			padding: $gutter-width;
 			position: relative;
@@ -105,7 +98,7 @@
 				margin: auto;
 				width: 0;
 				height: 0;
-				border-right: 16px solid $clouds;
+				border-right: 16px solid $panel-bg;
 				border-top: 16px solid transparent;
 				border-bottom: 16px solid transparent;
 			}
@@ -115,20 +108,24 @@
 				position: relative;
 				margin-bottom: 12px;
 
-				input + i.fa {
+				input + i {
 					display: block;
 					float: right;
 					position: absolute;
-					top: 8px;
+					top: 0;
+					bottom: 0;
 					right: 12px;
-					color: $theme-card-shadow;
+					margin: auto;
+					height: 1em;
+					width: 1em;
+					color: $panel-input-text;
 					font-size: 1.5em;
 				}
-				input:focus + i.fa {
-					color: $theme-complement;
+				input:focus + i {
+					color: $panel-input-focus-border;
 				}
-				input.invalid + i.fa {
-					color: $pomegranate;
+				input.invalid + i {
+					color: $panel-input-invalid-text;
 				}
 
 				&:last-child {
@@ -139,10 +136,10 @@
 
 		input[type="text"], input[type="password"] {
 			width: 100%;
-			background-color: $theme-card;
-			border: 2px solid $theme-card;
+			background-color: $panel-input-bg;
+			border: 2px solid $panel-input-bg;
 			font-size: $font-size-base;
-			color: $theme-text-dark;
+			color: $panel-input-focus-text;
 			font-weight: $font-weight-base;
 			padding: 8px 36px 8px 12px;
 			font-family: $font-stack;
@@ -150,15 +147,15 @@
 			outline: none;
 
 			&:disabled {
-				background-color: $theme-light;
-				border-color: $theme-card-shadow;
-				color: $theme-card-shadow;
+				background-color: $panel-input-disabled-bg;
+				border-color: $panel-input-disabled-text;
+				color: $panel-input-disabled-text;
 			}
 			&:focus {
-				border-color: $theme-complement;
+				border-color: $panel-input-focus-border;
 			}
 			&.invalid {
-				border-color: $alizarin;
+				border-color: $panel-input-invalid-border;
 			}
 		}
 		button {
@@ -172,7 +169,7 @@
 			background-color: $theme-color;
 			opacity: 0.5;
 			margin: 0;
-			width: calc(100% - 8px);
+			width: calc(100% - 32px);
 			color: $clouds;
 			outline: none;
 			box-shadow: 0 2px rgba(0,0,0,0.15);
@@ -198,34 +195,38 @@
 				opacity: 0.8;
 			}
 			&:active:not(:disabled) {
-				background-color: $theme-shadow;
+				background-color: $panel-submit-active-bg;
+				color: $panel-submit-active-text;
 			}
 			&:disabled {
 				transform: translateY(-100%);
-				// background-color: $theme-card;
-				// color: $theme-complement;
+				background-color: $panel-submit-disabled-bg;
+				color: $panel-submit-disabled-text;
 				opacity: 0;
 			}
 		}
 		a {
-			color: lighten($theme-complement, 25%);
+			color: $link-text;
 			display: block;
 			text-align: center;
 			outline: none;
 			display: none;
 
 			&:hover, &:focus {
-				color: $theme-color;
+				// color: $theme-color;
 			}
 			&:active {
-				color: $midnight-blue;
+				// color: $midnight-blue;
 			}
 		}
 
 		&::after {
 			box-sizing: border-box;
-			content: '';
-			border: 14px dotted $theme-complement;
+			content: '\e74f';
+			font-family: 'ionicons';
+			color: $panel-spinner;
+			font-size: 120px;
+			// border: 14px dotted $panel-spinner;
 			border-radius: 50px;
 			display: block;
 			position: absolute;
@@ -235,8 +236,8 @@
 			bottom: 0;
 			right: 0;
 			margin: auto;
-			width: 89px;
-			height: 89px;
+			width: 120px; //89px;
+			height: 120px; //89px;
 			animation-name: spin;
 			animation-duration: 2s;
 			animation-iteration-count: infinite;
@@ -257,8 +258,8 @@
 			button {
 				transform: translateY(0px);
 				opacity: 0.8;
-				background-color: $theme-card;
-				color: $theme-card-shadow;
+				// background-color: $theme-card;
+				// color: $theme-card-shadow;
 
 				.available {
 					display: none;

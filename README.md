@@ -6,12 +6,18 @@ This repository contains the design mockups for the upcoming version 3.0 of Quic
 
 Please keep in mind that because this is for a Chrome extension, only Chrome is supported. Layouts will most likely be broken in other browsers.
 
+## Installation
+
+You will need to run `bower install` in order to install all dependencies.
+
+## Usage
+
+Open up `dist/index.html` in Chrome.
+
 ## Currently working on
 
-- [ ] Style `:active` states
-- [ ] Use more SCSS variables for sizing
-- [ ] Dashboard
-- [ ] Trends
+- [x] Implement templating
+- [x] Implement basic framework
 
 ## Things to Design
 
@@ -28,13 +34,16 @@ Please keep in mind that because this is for a Chrome extension, only Chrome is 
 - [ ] Grade editing
 - [ ] Exams
 - [ ] Icon
-- [ ] Mobile version (responsive?)
+- [ ] Mobile mockups
 - [ ] Homepage
+- [ ] Dashboard
+- [ ] Trends
+- [ ] Style `:active` states
 
 ## Things to Figure Out
 
 - [ ] Long assignment names
-- [ ] Cycle selector is not intuitive
+- [x] Cycle selector is not intuitive
 - [ ] Themes?
 
 ## Features 

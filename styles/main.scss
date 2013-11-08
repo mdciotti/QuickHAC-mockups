@@ -1,7 +1,9 @@
 
+$theme: ios;
 $fa-font-path: '../fonts/FontAwesome';
 @import '../lib/font-awesome-4.0.1/scss/font-awesome.scss';
 @import '../fonts/Lato/Lato.css';
+@import '../fonts/ionicons/ionicons.css';
 
 @import '_variables.scss';
 @import '_login.scss';
@@ -30,12 +32,12 @@ body {
 
 	// height: 100%;
 	// margin: 0;
-	background-color: $theme-light;
-	color: $theme-text-dark;
+	background-color: $body-bg;
+	color: $body-text;
 	display: flex;
 	flex-direction: column;
 	font-family: $font-stack;
-	font-weight: 300;
+	font-weight: $font-weight-base;
 	line-height: 1;
 	-webkit-user-select: none;
 	user-select: none;
@@ -43,7 +45,13 @@ body {
 }
 
 a:link, a:visited {
-	color: $petermann-river;
+	color: $link-text;
+}
+
+a[href^="#"] {
+	cursor: default;
+	color: inherit;
+	text-decoration: none;
 }
 
 // a:after {
@@ -62,7 +70,7 @@ a:link, a:visited {
 	overflow-y: hidden;
 	overflow-x: hidden;
 	background-color: $theme-complement-shadow;
-	background-image: url('../images/bg.png');
+	background-image: $app-bg;
 	background-size: cover;
 	background-position: center;
 	justify-content: center;

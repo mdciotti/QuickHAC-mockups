@@ -2,9 +2,9 @@
 header {
 	height: $header-height;
 	flex: 0 0 auto;
-	background-color: $theme-color;
+	background-color: $header-bg;
 	display: flex;
-	color: $theme-text-light;
+	color: $header-text;
 
 	h1 {
 		flex: 0 0 auto;
@@ -12,15 +12,9 @@ header {
 		margin: 0;
 		display: flex;
 		line-height: $header-height;
+		color: $header-logo;
 
-		img {
-			width: $header-height;
-			height: $header-height;
-			flex: 0 0 auto;
-			// background-color: $midnight-blue;
-		}
-
-		i.fa {
+		i {
 			flex: 0 0 auto;
 			width: $header-height;
 			line-height: $header-height - $gutter-width;
@@ -31,7 +25,6 @@ header {
 		}
 
 		.app-name {
-			// margin-left: 16px;
 			flex: 1 1 auto;
 		}
 	}
@@ -50,16 +43,16 @@ header {
 				flex: 0 0 auto;
 
 				&:hover:not(.selected) {
-					background-color: $theme-highlight;
+					background-color: $header-highlight-bg;
+					color: $header-highlight-text;
 				}
-				&:active i.fa {
+				&:active i {
 					transform: scale(0.9);
 				}
 
 				&.selected {
-					// background-color: lighten($sun-flower, 25%);
-					background-color: $theme-shadow;
-					// color: $theme-color;
+					background-color: $header-selected-bg;
+					color: $header-selected-text;
 				}
 				a:link, a:visited {
 					display: block;
@@ -67,7 +60,7 @@ header {
 					font-size: $header-icon-size;
 					line-height: $header-height;
 					text-align: center;
-					color: $theme-text-light;
+					color: inherit;
 				}
 			}
 		}
@@ -78,42 +71,33 @@ header {
 		// text-align: right;
 		display: flex;
 
-		&:hover {
-			background-color: $theme-highlight;
-
-			ul {
-				top: $header-height;
-			}
+		&:hover ul {
+			top: $header-height;
 		}
 
-		& > i.fa {
+		& > i {
 			flex: 0 1 auto;
 			width: $header-height;
 			line-height: $header-height;
 			// padding: 8px;
-			font-size: $header-icon-size;
 			text-align: center;
 		}
 
 		ul {
 			flex: 0 1 auto;
 			top: $header-height - $gutter-width;
-			background-color: $theme-menu;
-			color: $silver;
 
 			li {
-				&:hover {
-					background-color: $theme-menu-highlight;
-					color: $theme-color;
 
-					i.fa {
-						color: $theme-color;
-					}
+				i {
+					color: $menu-icon;
+					margin-right: 4px;
 				}
 
-				i.fa {
-					color: lighten($theme-menu, 20%);
-					margin-right: 4px;
+				a {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
@@ -131,8 +115,13 @@ header {
 			// top: $header-height + 16px;
 		}
 	}
-	.options-panel {
+	.more-panel {
 		flex: 0 1 auto;
+
+		& > i {
+			font-size: $header-icon-size;
+		}
+
 		ul {
 			width: 3 / 4 * $sidebar-width;
 		}

@@ -3,31 +3,61 @@
 	.view-bar {
 		display: flex;
 		height: 32px;
+		color: $header-text;
 
 		.button {
-			flex: 1 1 auto;
-			// width: 40px;
+			flex: 0 0 32px;
 			padding: 6px;
-			background-color: $theme-menu-highlight;
-			color: $theme-menu-text-dark; //lighten($silver, 15%);
+			background-color: $header-bg;
+			color: $header-text;
 			text-align: center;
 			font-size: 20px;
 			font-weight: 700;
 
 			&:hover:not(.selected) {
-				background-color: lighten($theme-menu-highlight, 10%);
+				background-color: $header-highlight-bg;
+				color: $header-highlight-text;
 			}
 
 			&.selected {
-				background-color: $midnight-blue;
-				color: $theme-color;
+				background-color: $header-selected-bg;
+				color: $header-selected-text;
+			}
+		}
+		.menu {
+			flex: 1 1 auto;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			.current {
+				text-align: center;
+				line-height: 32px;
+				// font-weight: $font-weight-heavy;
+				// color: $header-text;
+			}
+
+			ul {
+				width: 100%;
+				top: 16px;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			&:hover ul {
+				top: 32px;
 			}
 		}
 	}
 
 	.views {
+		margin-top: 0;
+
 		li {
+			display: flex;
+
 			.average {
+				flex: 0 0 auto;
+				order: 2;
 				display: block;
 				float: left;
 				width: 36px;
@@ -35,15 +65,27 @@
 				line-height: 36px;
 				text-align: center;
 				font-size: 16px;
-				margin: -8px 8px -8px -16px;
-				font-weight: 700;
-				background-color: $theme-menu-highlight;
-				// color: 
+				margin: -8px -16px -8px 0;
+				font-weight: $font-weight-heavy;
+				// background-color: $theme-menu-highlight;
+				color: $sidebar-icon;
 			}
 
 			&.selected .average {
-				background-color: $theme-color;
-				color: $theme-light;
+				// background-color: $theme-color;
+				color: $sidebar-selected-text;
+			}
+
+			&:hover:not(.selected) .average {
+				color: $sidebar-highlight-text;
+			}
+
+			.name {
+				flex: 1 1 auto;
+				order: 1;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -52,19 +94,19 @@
 		bottom: 0;
 		width: 100%;
 		padding: 8px;
-		background-color: $theme-menu-highlight;
+		background-color: $gpa-bg;
 		font-weight: 700;
 		font-size: 16px;
 		text-align: center;
 
 		.gpa {
 			font-weight: 300;
-			color: $theme-color;
+			color: $gpa-text;
 
 			&:before {
 				content: 'GPA';
 				font-size: 12px;
-				color: $theme-menu-text-dark;
+				color: transparentize($gpa-text, 0.5);
 				font-weight: 700;
 				margin-right: 8px;
 			}

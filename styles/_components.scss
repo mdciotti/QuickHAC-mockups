@@ -8,6 +8,12 @@
 	}
 }
 
+.icon-gpa:before {
+	content: '4.0';
+	font-weight: 100;
+	font-size: 0.75em;
+}
+
 .split {
 	display: flex;
 	margin: -$gutter-width 0;
@@ -29,7 +35,13 @@
 .menu {
 	position: relative;
 
+	& > i {
+		font-size: $font-size-base;
+	}
+
 	ul {
+		background-color: $menu-bg;
+		color: $menu-text;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -51,13 +63,26 @@
 				color: inherit;
 				text-decoration: none;
 			}
+			&:hover {
+				background-color: $menu-highlight-bg;
+				color: $menu-highlight-text;
+
+				i {
+					color: inherit;
+				}
+			}
 		}
 	}
 
-	&:hover ul {
-		// display: block;
-		z-index: 10;
-		opacity: 1;
+	&:hover {
+		background-color: $header-highlight-bg;
+		color: $header-highlight-text;
+
+		ul {
+			// display: block;
+			z-index: 10;
+			opacity: 1;
+		}
 	}
 }
 
@@ -65,10 +90,10 @@
 	flex: 1 1 auto;
 }
 
-i.fa {
+i {
 	&[data-color="turquoise"] { color: $turquoise !important; }
 	&[data-color="emerald"] { color: $emerald !important; }
-	&[data-color="peter-river"] { color: $petermann-river !important; }
+	&[data-color="petermann-river"] { color: $petermann-river !important; }
 	&[data-color="amethyst"] { color: $amethyst !important; }
 	&[data-color="sun-flower"] { color: $sun-flower !important; }
 	&[data-color="carrot"] { color: $carrot !important; }
@@ -79,32 +104,44 @@ i.fa {
 .sidebar {
 	flex: 0 0 auto;
 	width: $sidebar-width;
-	background-color: $theme-menu;
-	color: $theme-menu-text-light;
+	background-color: $sidebar-bg;
+	color: $sidebar-text;
 	overflow-y: auto;
 	overflow-x: hidden;
 	position: relative;
 
-	ul {
+	& > ul {
 		margin: 8px 0 0 0;
 		padding: 0;
 		list-style-type: none;
 
 		li {
 			padding: 8px 16px;
-			font-size: 20px;
+			font-size: 18px;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 
+			i {
+				color: $sidebar-icon;
+			}
+
 			&:hover:not(.selected) {
-				background-color: $theme-menu-highlight;
-				// color: $peter-river-light;
+				background-color: $sidebar-highlight-bg;
+				color: $sidebar-highlight-text;
+
+				i {
+					color: $sidebar-highlight-icon;
+				}
 			}
 
 			&.selected {
-				background-color: $theme-light;
-				color: $theme-color;
+				background-color: $sidebar-selected-bg;
+				color: $sidebar-selected-text;
+
+				i {
+					color: $sidebar-selected-icon;
+				}
 			}
 		}
 	}
@@ -118,12 +155,12 @@ i.fa {
 	padding: 8px 16px;
 	// height: 32px;
 	text-align: center;
-	background-color: $silver;
-	color: $theme-text-dark;
+	background-color: $banner-bg;
+	color: $banner-text;
 
 	&.promotion {
-		background-color: $petermann-river;
-		color: $clouds;
+		background-color: $banner-promotion-bg;
+		color: $banner-promotion-text;
 	}
 
 	.message-banner {
@@ -136,9 +173,11 @@ i.fa {
 
 	.close {
 		float: right;
+		display: none;
 
 		&:hover:before {
-			content: $fa-var-times-circle-o;
+			content: '\e77f';
+			font-family: 'ionicons';
 		}
 	}
 }
@@ -147,5 +186,5 @@ i.fa {
 	flex: 1 1 auto;
 	overflow-y: auto;
 	overflow-x: hidden;
-	background-color: $theme-light;
+	background-color: $body-bg;
 }
