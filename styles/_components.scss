@@ -135,6 +135,10 @@ i {
 				}
 			}
 
+			&:active:not(.selected) a {
+				//
+			}
+
 			&.selected {
 				background-color: $sidebar-selected-bg;
 				color: $sidebar-selected-text;

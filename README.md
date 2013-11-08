@@ -39,6 +39,7 @@ Open up `dist/index.html` in Chrome.
 - [ ] Dashboard
 - [ ] Trends
 - [ ] Style `:active` states
+- [ ] Print style
 
 ## Things to Figure Out
 
