@@ -10,7 +10,7 @@ SCRIPT_OUT_DIR = compiled_scripts
 SCRIPTS = login.js
 SCRIPTS_EXT = .dart
 
-STYLE_ENGINE = dart2js
+STYLE_ENGINE = sass
 STYLE_SRC_DIR = styles
 STYLE_OUT_DIR = dist/css
 STYLES = main.scss
