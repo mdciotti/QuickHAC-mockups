@@ -8,7 +8,7 @@ Please keep in mind that because this is for a Chrome extension, only Chrome is 
 
 ## Installation
 
-You will need to run `bower install` in order to install all dependencies.
+You will need to run `bower install` in order to install all dependencies. This means you need [Bower](http://bower.io).
 
 ## Usage
 
