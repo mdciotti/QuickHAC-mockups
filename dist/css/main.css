@@ -1923,7 +1923,7 @@
 .login .login-panel .split-button-group label input[type="radio"]:checked + span {
   background-color: #ecf0f1;
   font-weight: 600;
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .login .login-panel .split-button-group label span {
@@ -1991,7 +1991,7 @@
 }
 
 .login .login-panel .input-group > label input:focus + i {
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .login .login-panel .input-group > label input.invalid + i {
@@ -2008,7 +2008,7 @@
   background-color: white;
   border: 2px solid white;
   font-size: 16px;
-  color: #444444;
+  color: #423c38;
   font-weight: 300;
   padding: 8px 36px 8px 12px;
   font-family: "Helvetica Neue", Helvetica;
@@ -2025,7 +2025,7 @@
 
 .login .login-panel input[type="text"]:focus,
 .login .login-panel input[type="password"]:focus {
-  border-color: #3498db;
+  border-color: #2ecc71;
 }
 
 .login .login-panel input[type="text"].invalid,
@@ -2049,7 +2049,7 @@
   font-weight: 300;
   padding: 12px 16px;
   border: none;
-  background-color: #3498db;
+  background-color: #2ecc71;
   opacity: 0.5;
   margin: 0;
   width: -webkit-calc(100% - 32px);
@@ -2096,13 +2096,13 @@
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
   opacity: 0;
 }
 
 .login .login-panel a {
-  color: #3498db;
+  color: #2ecc71;
   display: block;
   text-align: center;
   outline: none;
@@ -2115,7 +2115,7 @@
   box-sizing: border-box;
   content: '\e74f';
   font-family: 'ionicons';
-  color: #3498db;
+  color: #2ecc71;
   font-size: 120px;
   border-radius: 50px;
   display: block;
@@ -2232,7 +2232,7 @@
 
 .menu ul {
   background-color: #ecf0f1;
-  color: #444444;
+  color: #423c38;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -2256,7 +2256,7 @@
 }
 
 .menu ul li:hover {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
@@ -2265,7 +2265,7 @@
 }
 
 .menu:hover {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
@@ -2322,7 +2322,7 @@ i[data-color="concrete"] {
   flex: 0 0 auto;
   width: 192px;
   background-color: white;
-  color: #444444;
+  color: #423c38;
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
@@ -2347,7 +2347,7 @@ i[data-color="concrete"] {
 }
 
 .sidebar > ul li:hover:not(.selected) {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
@@ -2357,11 +2357,11 @@ i[data-color="concrete"] {
 
 .sidebar > ul li.selected {
   background-color: #ecf0f1;
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .sidebar > ul li.selected i {
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .banner {
@@ -2374,11 +2374,11 @@ i[data-color="concrete"] {
   padding: 8px 16px;
   text-align: center;
   background-color: #ecf0f1;
-  color: #444444;
+  color: #423c38;
 }
 
 .banner.promotion {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
@@ -2410,7 +2410,7 @@ header {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  color: #3498db;
+  color: #2ecc71;
 }
 
 header h1 {
@@ -2427,7 +2427,7 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   line-height: 48px;
-  color: #444444;
+  color: #423c38;
 }
 
 header h1 i {
@@ -2485,7 +2485,7 @@ header nav ul li {
 }
 
 header nav ul li:hover:not(.selected) {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
@@ -2497,7 +2497,7 @@ header nav ul li:active i {
 
 header nav ul li.selected {
   background-color: #ecf0f1;
-  color: #444444;
+  color: #423c38;
 }
 
 header nav ul li a:link,
@@ -2595,7 +2595,7 @@ header .more-panel ul {
   display: -ms-flexbox;
   display: flex;
   height: 32px;
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .sidebar-classes .view-bar .button {
@@ -2606,20 +2606,20 @@ header .more-panel ul {
   flex: 0 0 32px;
   padding: 6px;
   background-color: white;
-  color: #3498db;
+  color: #2ecc71;
   text-align: center;
   font-size: 20px;
   font-weight: 700;
 }
 
 .sidebar-classes .view-bar .button:hover:not(.selected) {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: #ecf0f1;
 }
 
 .sidebar-classes .view-bar .button.selected {
   background-color: #ecf0f1;
-  color: #444444;
+  color: #423c38;
 }
 
 .sidebar-classes .view-bar .menu {
@@ -2684,7 +2684,7 @@ header .more-panel ul {
 }
 
 .sidebar-classes .views li.selected .average {
-  color: #3498db;
+  color: #2ecc71;
 }
 
 .sidebar-classes .views li:hover:not(.selected) .average {
@@ -2720,13 +2720,13 @@ header .more-panel ul {
 
 .sidebar-classes .gpa-panel .gpa {
   font-weight: 300;
-  color: #444444;
+  color: #423c38;
 }
 
 .sidebar-classes .gpa-panel .gpa:before {
   content: 'GPA';
   font-size: 12px;
-  color: rgba(68, 68, 68, 0.5);
+  color: rgba(66, 60, 56, 0.5);
   font-weight: 700;
   margin-right: 8px;
 }
@@ -2765,6 +2765,7 @@ header .more-panel ul {
 .content .card {
   margin: 16px;
   background-color: white;
+  color: #423c38;
   padding: 16px;
   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
@@ -2840,6 +2841,7 @@ header .more-panel ul {
   margin: 16px;
   padding: 16px;
   background-color: white;
+  color: #423c38;
 }
 
 .dashboard .card h2 {
@@ -2860,17 +2862,19 @@ html {
 }
 
 body {
+  margin: 0 auto;
+}
+
+#preview {
   height: 432px;
   width: 700px;
   outline: 8px solid #ecf0f1;
   margin: auto;
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   background-color: #ecf0f1;
-  color: #444444;
+  color: #423c38;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -2895,7 +2899,7 @@ body {
 
 a:link,
 a:visited {
-  color: #3498db;
+  color: #2ecc71;
 }
 
 a[href^="#"] {
@@ -2917,7 +2921,7 @@ a[href^="#"] {
   display: flex;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #d35400;
+  background-color: #2ecc71;
   background-image: url("../images/bg-ios.jpg");
   -webkit-background-size: cover;
   background-size: cover;

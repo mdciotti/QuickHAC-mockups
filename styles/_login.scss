@@ -166,11 +166,11 @@
 			font-weight: $font-weight-base;
 			padding: 12px 16px;
 			border: none;
-			background-color: $theme-color;
+			background-color: $panel-submit-bg;
 			opacity: 0.5;
 			margin: 0;
 			width: calc(100% - 32px);
-			color: $clouds;
+			color: $panel-submit-text;
 			outline: none;
 			box-shadow: 0 2px rgba(0,0,0,0.15);
 			transform: translateY(-16px);
