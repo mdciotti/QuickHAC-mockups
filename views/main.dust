@@ -1,7 +1,0 @@
-
-{+header/}
-<div class="main-view">
-	{+sidebar/}
-	{+main_view/}
-</div>
-{+banner/}
