@@ -7,7 +7,8 @@
 	.card {
 		margin: 16px;
 		padding: 16px;
-		background-color: $theme-card;
+		background-color: $card-bg;
+		color: $card-text;
 
 		h2 {
 			margin: 0;

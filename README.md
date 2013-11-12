@@ -14,10 +14,19 @@ You will need to run `bower install` in order to install all dependencies. This 
 
 Open up `dist/index.html` in Chrome.
 
+To build scripts, run `make scripts`.
+
+To build templates, run `make templates`.
+
+To build styles, run `make styles`.
+
+To build everything, run `make all`.
+
 ## Currently working on
 
 - [x] Implement templating
 - [x] Implement basic framework
+- [ ] Themes?
 
 ## Things to Design
 
@@ -45,12 +54,11 @@ Open up `dist/index.html` in Chrome.
 
 - [ ] Long assignment names
 - [x] Cycle selector is not intuitive
-- [ ] Themes?
 
 ## Features 
 
 - [ ] Pull to refresh (mobile)
-- [ ] Pin (lock) course grade edits
+- [ ] Pin (freeze) course grade edits
 - [ ] Keyboard shortcuts
 - [ ] Preview sample student in browser (without downloading extension)
 

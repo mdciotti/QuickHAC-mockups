@@ -18,17 +18,21 @@ html {
 	background-color: $wet-asphalt;
 }
 
-body {
+body{
+	margin: 0 auto;
+}
+
+#preview {
 	height: 432px;
 	// width: 768px; // 16:9
 	width: 700px; // Golden ratio
 	outline: 8px solid $clouds;
 	margin: auto;
 	position: absolute;
-	top: 0;
+	// top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	// bottom: 0;
 
 	// height: 100%;
 	// margin: 0;
@@ -69,7 +73,7 @@ a[href^="#"] {
 	display: flex;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	background-color: $theme-complement-shadow;
+	background-color: $color;
 	background-image: $app-bg;
 	background-size: cover;
 	background-position: center;

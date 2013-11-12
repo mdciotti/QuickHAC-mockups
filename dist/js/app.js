@@ -40,7 +40,7 @@ var Workspace = Backbone.Router.extend({
 
 var MainView = Backbone.View.extend({
 
-	el: $("body"),
+	el: $("#preview"),
 
 	initialize: function () {
 		_.bindAll(this, "render")
