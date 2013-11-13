@@ -3,13 +3,17 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Yash Aggarwal -- Developer -- @linuxfreak
+    Maxwell Ciotti -- Lead Designer -- @mdciotti
+    Tristan Seifert -- Intern???? -- 
+    Xuming Zeng -- CEO -- @xsznix
 
 # THANKS
 
-    <name>
+    RRISD?
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    Ionicons

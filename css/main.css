@@ -1,3 +1,6 @@
+
+@import url("ionicons.min.css");
+
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
@@ -7,21 +10,22 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: #444444;
 }
 
 body {
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #00aced;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #00aced;
     text-shadow: none;
 }
 
@@ -55,99 +59,261 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-}
-
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #e44d26;
+nav {
+    /*border-top: 10px solid #e44d26;*/
 }
 
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}
-
-.header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
+nav .wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .title {
-    color: white;
+    font-weight: 100;
 }
 
-/* ==============
-    MOBILE: Menu
-   ============== */
+.title a {
+    color: white;
+    text-decoration: none;
+}
+
+.download {
+    background-color: #00aced;
+    color: #ffffff;
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 120px;
+    font-size: 32px;
+    font-weight: 100;
+    text-decoration: none;
+    line-height: 40px;
+    text-align: left;
+}
+.download i {
+    color: inherit;
+    font-size: 80px;
+    line-height: 1;
+    float: left;
+    margin-right: 24px;
+}
+.download span {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.download small {
+    font-size: 16px;
+    display: block;
+    opacity: 0.5;
+    /*float: left;*/
+    line-height: 1;
+}
 
 nav ul {
     margin: 0;
     padding: 0;
 }
 
-nav a {
+nav ul a {
     display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
+    /*margin-bottom: 10px;*/
+    /*padding: 15px 0;*/
 
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
+    /*font-weight: bold;*/
 
     color: white;
-    background: #e44d26;
+    border-top: 4px solid transparent;
 }
 
-nav a:hover,
-nav a:visited {
-    color: white;
+nav ul a:hover {
+    color: #00aced;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav ul a:hover {
+    /*text-decoration: underline;*/
+    border-color: #00aced;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
+header {
+    padding-top: 64px;
+    color: #ffffff;
 }
 
-.main article h1 {
-    font-size: 2em;
+header .bg {
+    position: fixed;
+    top: -48px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center -48px;
+    /*background-attachment: fixed;*/
 }
 
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
+header .preview {
+    display: block;
+    margin: 48px auto -64px auto;
+    box-shadow: 0 0 64px 0px rgba(0,0,0,0.5);
 }
 
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
+section, footer {
+    padding: 32px 0;
 }
 
-/* ===============
-    ALL: IE Fixes
-   =============== */
+section {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+section .wrapper, footer .wrapper {
+    border-top: thin solid #cccccc;
+}
+
+section#overview {
+    padding-top: 64px;
+    text-align: center;
+    /*background-color: #eeeeee;*/
+}
+
+section#overview .wrapper {
+    border-top: none;
+}
+
+section .block {
+    margin-top: 32px;
+    padding: 0 16px;
+}
+
+section .block i {
+    font-size: 48px;
+    line-height: 1;
+    color: #00aced;
+}
+
+section .block h3 {
+    font-size: 15px;
+    margin: 0.5em;
+}
+
+section .block p {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    color: #aaaaaa;
+    opacity: 1;
+}
+
+section .block a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #00aced;
+    font-weight: 500;
+    margin-top: 1em;
+    display: inline-block;
+}
+
+section .block a:after {
+    content: ' \25be';
+}
+
+section .block a:hover {
+    color: #44ccfd;
+}
+
+section i {
+    font-size: 64px;
+    color: #00aced;
+    display: block;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+}
+
+section p {
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    opacity: 0.75;
+    letter-spacing: 0.01pc;
+    text-align: left;
+}
+
+section img {
+    display: block;
+    max-width: 100%;
+    margin: 32px auto 0 auto;
+    box-shadow: 0 0 64px 0px rgba(0,0,0,0.5);
+}
+
+section img.inline {
+    display: inline-block;
+    box-shadow: 0 0 32px -8px rgba(0,0,0,0.5);
+    border-radius: 50%;
+    margin: 32px 32px 0 32px;
+    border: 4px solid #cccccc;
+}
+
+footer {
+    background-color: #ffffff;
+    /*color: #cccccc;*/
+}
+
+footer h2 {
+    width: 160px;
+    line-height: 1.2;
+    text-align: center;
+    margin: -32px auto 32px auto;
+    background-color: #ffffff;
+}
+
+footer section {
+    background: none;
+    padding: 0;
+}
+
+footer h4 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+footer a {
+    color: #888888;
+    text-decoration: none;
+}
+
+footer a:hover {
+    /*text-decoration: underline;*/
+    color: #00aced;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+section.copyright {
+    clear: both;
+    background-color: #333333;
+    color: #666666;
+    padding: 0;
+    text-align: center;
+    display: none;
+}
+
+section.copyright .wrapper {
+    /*border-top: ;*/
+}
 
 .ie7 .title {
     padding-top: 20px;
@@ -177,15 +343,11 @@ nav a:hover {
 
 @media only screen and (min-width: 480px) {
 
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
+    nav ul a {
         float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
+        /*width: 27%;*/
+        margin: 0;
+        padding: 16px;
         margin-bottom: 0;
     }
 
@@ -197,12 +359,15 @@ nav a:hover {
         margin-right: 0;
     }
 
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
     nav ul li {
         display: inline;
+    }
+
+    section .block {
+        display: inline-block;
+        vertical-align: top;
+        width: 40%;
+        text-align: center;
     }
 
     .oldie nav a {
@@ -212,54 +377,84 @@ nav a:hover {
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-    }
-
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
+    .wrapper {
+        width: 768px;
+        padding: 16px;
     }
 
     nav {
-        float: right;
-        width: 38%;
+        background-color: rgba(255,255,255,0.15);
+        position: absolute;
+        width: 100%;
     }
 
-/* ============
-    WIDE: Main
-   ============ */
+    nav .wrapper::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 
-    .main article {
+    nav .title {
         float: left;
-        width: 57%;
+        margin: 0;
+        padding: 8px 0;
     }
 
-    .main aside {
+    nav ul {
         float: right;
+        /*width: 38%;*/
+    }
+
+    header .bg {
+        /*background-image: url('../img/blue.png');*/
+        background-image: url('../img/wallpaper-2785411.jpg');
+    }
+
+    section .block {
+        display: inline-block;
+        vertical-align: top;
         width: 28%;
+        text-align: center;
+    }
+
+    section p {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    footer ul {
+        padding: 0;
+        margin-bottom: 32px;
+        font-size: 14px;
+    }
+
+    footer ul.social {
+        font-size: 32px;
+    }
+
+    footer ul li {
+        display: inline-block;
+        margin: 0 32px;
+        font-weight: 500;
+    }
+
+    footer h3,
+    footer section {
+        float: left;
+        width: 192px;
+    }
+
+    footer .wrapper::after {
+        content: '';
+        display: block;
+        clear: both;
     }
 }
 
 @media only screen and (min-width: 1140px) {
 
-/* ===============
-    Maximal Width
-   =============== */
-
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+
     }
 }
 
