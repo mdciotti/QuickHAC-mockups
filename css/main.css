@@ -21,12 +21,27 @@ body {
 
 ::-moz-selection {
     background: #00aced;
+    color: #ffffff;
     text-shadow: none;
 }
 
 ::selection {
     background: #00aced;
+    color: #ffffff;
     text-shadow: none;
+}
+
+a {
+    color: #00aced;
+    text-decoration: none;
+}
+a:hover {
+    color: #44ccff;
+    text-decoration: underline;
+}
+
+i, h1, h2, h3, h4, h5, h6 {
+    cursor: default;
 }
 
 hr {
@@ -87,32 +102,59 @@ nav .wrapper {
     background-color: #00aced;
     color: #ffffff;
     display: inline-block;
-    padding: 16px 32px;
+    padding: 0.5em 1em 0.5em 0.5em;
     border-radius: 120px;
-    font-size: 32px;
+    font-size: 1.3em;
     font-weight: 100;
     text-decoration: none;
-    line-height: 40px;
+    line-height: 1;
     text-align: left;
+    margin: 0 1em 1em 1em;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
+.download:hover {
+    color: #ffffff;
+    background-color: #44ccff;
+}
+
 .download i {
     color: inherit;
-    font-size: 80px;
+    font-size: 2.5em;
     line-height: 1;
     float: left;
-    margin-right: 24px;
+    margin-right: 0.2em;
+    background: none;
 }
 .download span {
-    margin-top: 10px;
+    margin-top: 0.3em;
     display: inline-block;
 }
 
 .download small {
-    font-size: 16px;
+    font-size: 0.65em;
     display: block;
     opacity: 0.5;
-    /*float: left;*/
     line-height: 1;
+    font-weight: 400;
+    text-decoration: none;
+}
+.download:hover small {
+    text-decoration: none;
+}
+.download.unsupported {
+    display: none;
+    text-align: center;
+    width: 30%;
+    border: thin solid #cccccc;
+    padding: 1em 2em;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: default;
+    text-decoration: none;
+    white-space: normal;
 }
 
 nav ul {
@@ -134,10 +176,13 @@ nav ul a {
 }
 
 nav ul a:hover {
-    color: #00aced;
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.25);
 }
 
-nav ul a:hover {
+nav ul li.selected a {
     /*text-decoration: underline;*/
     border-color: #00aced;
 }
@@ -159,8 +204,13 @@ header .bg {
 }
 
 header .preview {
-    display: block;
-    margin: 48px auto -64px auto;
+    margin: 48px auto 0 auto;
+}
+
+header .preview img {
+    width: 100%;
+    max-width: 716px;
+    margin: 0 auto -64px auto;
     box-shadow: 0 0 64px 0px rgba(0,0,0,0.5);
 }
 
@@ -187,6 +237,10 @@ section#overview .wrapper {
     border-top: none;
 }
 
+section#downloads .more {
+    display: block;
+}
+
 section .block {
     margin-top: 32px;
     padding: 0 16px;
@@ -196,6 +250,8 @@ section .block i {
     font-size: 48px;
     line-height: 1;
     color: #00aced;
+    background-color: transparent;
+    margin: 0;
 }
 
 section .block h3 {
@@ -204,11 +260,11 @@ section .block h3 {
 }
 
 section .block p {
-    width: 100%;
+    width: 70%;
     font-size: 14px;
     font-weight: 300;
-    color: #aaaaaa;
-    opacity: 1;
+    /*color: #aaaaaa;*/
+    text-align: center;
 }
 
 section .block a {
@@ -228,11 +284,16 @@ section .block a:hover {
     color: #44ccfd;
 }
 
-section i {
+section.feature i {
     font-size: 64px;
     color: #00aced;
-    display: block;
-    margin: 0 auto;
+    /*display: block;*/
+    margin: -40px auto 0 auto;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    border: thin solid #cccccc;
+
 }
 
 section h2 {
@@ -242,14 +303,16 @@ section h2 {
 section p {
     font-weight: 300;
     text-rendering: optimizeLegibility;
-    opacity: 0.75;
     letter-spacing: 0.01pc;
     text-align: left;
+    width: 70%;
+    margin: 0 auto;
+    color: #888888;
 }
 
 section img {
-    display: block;
-    max-width: 100%;
+    display: inline-block;
+    max-width: 90%;
     margin: 32px auto 0 auto;
     box-shadow: 0 0 64px 0px rgba(0,0,0,0.5);
 }
@@ -268,10 +331,10 @@ footer {
 }
 
 footer h2 {
-    width: 160px;
+    width: 5em;
     line-height: 1.2;
     text-align: center;
-    margin: -32px auto 32px auto;
+    margin: -0.67em auto 1.33em auto;
     background-color: #ffffff;
 }
 
@@ -343,6 +406,33 @@ section.copyright .wrapper {
 
 @media only screen and (min-width: 480px) {
 
+    .download {
+        font-size: 1.6em;
+    }
+
+    nav {
+        background-color: rgba(255,255,255,0.15);
+        position: absolute;
+        width: 100%;
+    }
+
+    nav .wrapper::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    nav .title {
+        float: left;
+        margin: 0;
+        padding: 8px 16px;
+    }
+
+    nav ul {
+        float: right;
+        /*width: 38%;*/
+    }
+
     nav ul a {
         float: left;
         /*width: 27%;*/
@@ -363,6 +453,11 @@ section.copyright .wrapper {
         display: inline;
     }
 
+    header .bg {
+        /*background-image: url('../img/blue.png');*/
+        background-image: url('../img/wallpaper-2785411.jpg');
+    }
+
     section .block {
         display: inline-block;
         vertical-align: top;
@@ -377,49 +472,20 @@ section.copyright .wrapper {
 
 @media only screen and (min-width: 768px) {
 
+    .download {
+        font-size: 2em;
+    }
+
     .wrapper {
         width: 768px;
-        padding: 16px;
-    }
-
-    nav {
-        background-color: rgba(255,255,255,0.15);
-        position: absolute;
-        width: 100%;
-    }
-
-    nav .wrapper::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-
-    nav .title {
-        float: left;
-        margin: 0;
-        padding: 8px 0;
-    }
-
-    nav ul {
-        float: right;
-        /*width: 38%;*/
-    }
-
-    header .bg {
-        /*background-image: url('../img/blue.png');*/
-        background-image: url('../img/wallpaper-2785411.jpg');
+        /*padding: 16px;*/
     }
 
     section .block {
-        display: inline-block;
-        vertical-align: top;
         width: 28%;
-        text-align: center;
     }
-
-    section p {
-        width: 70%;
-        margin: 0 auto;
+    section .block p {
+        width: 100%;
     }
 
     footer ul {
