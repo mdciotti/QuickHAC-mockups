@@ -93,13 +93,13 @@ Parallax.prototype = {
 		this.parallax()
 	},
 	reset_offset: function () {
-		this.$el.css("transform", "translateY(" + this.beginEffect + ")")
+		this.$el.css("transform", "translate3d(0, " + this.beginEffect + ", 0)")
 	},
 	parallax: function () {
 		var offset = $(window).scrollTop();
 		if (offset > this.endEffect) return;
 		var t = -Math.round(offset * this.inertia);
-		this.$el.css("transform", "translateY(" + t + "px)");
+		this.$el.css("transform", "translate3d(0, " + t + "px, 0)");
 	}
 };
 

@@ -81,16 +81,18 @@ textarea {
 }
 
 nav {
-    /*border-top: 10px solid #e44d26;*/
+    background-color: #444444;
+
 }
 
 nav .wrapper {
-    padding-top: 0;
-    padding-bottom: 0;
+
 }
 
 .title {
     font-weight: 100;
+    margin: 0;
+    text-align: center;
 }
 
 .title a {
@@ -307,7 +309,7 @@ section p {
     text-align: left;
     width: 70%;
     margin: 0 auto;
-    color: #888888;
+    color: #444444;
 }
 
 section img {
@@ -416,6 +418,11 @@ section.copyright .wrapper {
         width: 100%;
     }
 
+    nav .wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
     nav .wrapper::after {
         content: '';
         display: block;
@@ -423,9 +430,11 @@ section.copyright .wrapper {
     }
 
     nav .title {
+        font-size: 30px;
+        line-height: 1;
         float: left;
         margin: 0;
-        padding: 8px 16px;
+        padding: 14px 16px;
     }
 
     nav ul {
