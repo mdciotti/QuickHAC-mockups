@@ -1,62 +1,79 @@
 // To allow forEach on NodeList
-function forEach() {
+function forEachNode() {
 	var args = [].slice.call(arguments, 0);
 	var ctx = args.shift();
 	return [].forEach.apply(ctx, args);
 }
 
-window.addEventListener("load", function () {
+// Login code
+var LoginForm = {
 
-	var form = document.forms["login"];
-	form["username"].addEventListener("input", validate, false);
-	form["password"].addEventListener("input", validate, false);
-	form["id"].addEventListener("input", validate, false);
-	var button = form.querySelector("button");
+	init: function () {
+		var form = document.forms["login"];
+		form["username"].addEventListener("input", LoginForm.validate.bind(null, form), false);
+		form["password"].addEventListener("input", LoginForm.validate.bind(null, form), false);
+		form["id"].addEventListener("input", LoginForm.validate.bind(null, form), false);
 
-	forEach(document.querySelectorAll(".split-button-group input"), function (el) {
-		el.addEventListener("change", function (e) {
-			var username = form["username"].value;
-			var password = form["password"].value;
-			var id = form["id"].value;
+		forEachNode(document.querySelectorAll(".split-button-group input"), function (el) {
+			el.addEventListener("change", function (e) {
+				var username = form["username"].value;
+				var password = form["password"].value;
+				var id = form["id"].value;
 
-			if (username === "") {
-				form["username"].focus();
-			} else if (password === "") {
-				form["password"].focus();
-			} else if (id === "") {
-				form["id"].focus();
-			} else {
-				button.focus();
-			}
+				if (username === "") {
+					form["username"].focus();
+				} else if (password === "") {
+					form["password"].focus();
+				} else if (id === "") {
+					form["id"].focus();
+				} else {
+					form.querySelector("button").focus();
+				}
+			}, false);
+		});
+
+		form.addEventListener("submit", function (e) {
+			console.log("logging in...");
+			// Prevent form from changing page
+			e.preventDefault();
+			// Disallow further input
+			LoginForm.disable();
+
+			// Placeholder server success
+			var success = form["username"].value === "admin" && form["password"].value === "abc" && form["id"].value === "123456";
+
+			// Placeholder server response
+			setTimeout(LoginForm.responseHandler.bind(null, !success, form), success ? 1000 : 3000);
 		}, false);
-	});
+	},
 
-	function disableForm() {
+	disable: function (form) {
 		form.classList.add("busy");
-		forEach(form.querySelectorAll(".split-button-group input"), function (el) {
+		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
 			el.disabled = true;
 		});
 		form["username"].disabled = true;
 		form["password"].disabled = true;
 		form["id"].disabled = true;
-		button.disabled = true;
-	}
-	function enableForm() {
+		form.querySelector("button").disabled = true;
+	},
+
+	enable: function (form) {
 		form.classList.remove("busy");
-		forEach(form.querySelectorAll(".split-button-group input"), function (el) {
+		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
 			el.disabled = false;
 		});
 		form["username"].disabled = false;
 		form["password"].disabled = false;
 		form["id"].disabled = false;
-		button.disabled = false;
-	}
+		form.querySelector("button").disabled = false;
+	},
 
-	function responseHandler(error) {
+	responseHandler: function (error, form) {
 		if (error) {
 			// Error while logging in
 			// Allow input
-			enableForm();
+			LoginForm.enable(form);
 			form.classList.add("error");
 			setTimeout(function () {
 				form.classList.remove("error");
@@ -66,27 +83,14 @@ window.addEventListener("load", function () {
 		}
 		// Login succeeded
 		// Placeholder navigation
-		location.href = location.href.replace("login.html", "dashboard.html");
-	}
+		window.location.href = window.location.href.replace("login.html", "dashboard.html");
+	},
 
-	form.addEventListener("submit", function (e) {
-		console.log("logging in...");
-		// Prevent form from changing page
-		e.preventDefault();
-		// Disallow further input
-		disableForm();
-
-		// Placeholder server success
-		var success = form["username"].value === "admin" && form["password"].value === "abc" && form["id"].value === "123456";
-
-		// Placeholder server response
-		setTimeout(responseHandler.bind(null, !success), success ? 1000 : 3000);
-	}, false);
-
-	function validate() {
+	validate: function (form) {
 		var ID_isNumeric = !form["id"].validity.patternMismatch;
 		var ID_isLongEnough = form["id"].value.length >= 6;
 		var ID_isValid;
+		var button = form.querySelector("button");
 
 		// If ID entered is numeric
 		if (ID_isNumeric) {
@@ -110,5 +114,4 @@ window.addEventListener("load", function () {
 			button.disabled = true;
 		}
 	}
-	
-}, false);
+};

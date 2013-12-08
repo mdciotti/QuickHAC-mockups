@@ -13,7 +13,7 @@ var Workspace = Backbone.Router.extend({
 	},
 
 	login: function () {
-
+		LoginForm.init();
 	},
 
 	logout: function () {
@@ -36,7 +36,7 @@ var Workspace = Backbone.Router.extend({
 
 	}
 
-})
+});
 
 var MainView = Backbone.View.extend({
 
