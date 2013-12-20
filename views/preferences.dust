@@ -5,10 +5,11 @@
 {/header}
 
 {<sidebar}
-<div class="sidebar">
-	<ul class="views">
+<div class="sidebar sidebar-preferences">
+	<h2>Preferences</h2>
+	<ul class="categories">
 		{#categories}
-		<li {@eq key=name value=category}class="selected"{/eq}><a href="#!/{route}"><i class="{icon}"></i> {name}</a></li>
+		<li{?selected} class="selected"{/selected}><a href="#/{route}"><i class="{icon}"></i> <span class="title">{name}</span></a></li>
 		{/categories}
 	</ul>
 </div>

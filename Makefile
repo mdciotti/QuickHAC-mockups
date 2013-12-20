@@ -1,14 +1,12 @@
 TEMPLATE_ENGINE = dustc
 TEMPLATE_SRC_DIR = views
 TEMPLATE_OUT_DIR = compiled_templates
-TEMPLATES = banner dashboard details header login main preferences
-TEMPLATE_EXT = dust
+TEMPLATES = banner.dust dashboard.dust details.dust header.dust login.dust main.dust preferences.dust
 
 SCRIPT_COMPILER = dart2js
 SCRIPT_SRC_DIR = scripts
 SCRIPT_OUT_DIR = compiled_scripts
 SCRIPTS = login.js
-SCRIPTS_EXT = .dart
 
 STYLE_ENGINE = sass
 STYLE_SRC_DIR = styles
@@ -22,20 +20,20 @@ all: scripts styles templates
 styles: $(STYLES)
 
 $(STYLES):
-	$(STYLE_ENGINE) --unix-newlines --scss --style compact $@ $(STYLE_OUT_DIR)/$@.css
+	$(STYLE_ENGINE) --unix-newlines --scss --style compact $(STYLE_SRC_DIR)/$@ $(STYLE_OUT_DIR)/$(addsuffix .css, $(basename $@))
 
 scripts: clear_scripts $(SCRIPTS)
 
 $(SCRIPTS):
 	# $(SCRIPT_COMPILER) $(SCRIPT_SRC_DIR)/$@.$(SCRIPT_EXT) -o $(SCRIPT_OUT_DIR)/$@.js
 	# cat $(SCRIPT_OUT_DIR)/$@.js >> dist/js/scripts.js
-	cat $(SCRIPT_OUT_DIR)/$@ >> dist/js/scripts.js
+	cat $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@)) >> dist/js/scripts.js
 
 templates: clear_templates $(TEMPLATES)
 
 $(TEMPLATES):
-	$(TEMPLATE_ENGINE) --name=$@ $(TEMPLATE_SRC_DIR)/$@.$(TEMPLATE_EXT) > $(TEMPLATE_OUT_DIR)/$@.js
-	cat $(TEMPLATE_OUT_DIR)/$@.js >> dist/js/templates.js
+	$(TEMPLATE_ENGINE) --name=$(basename $@) $(TEMPLATE_SRC_DIR)/$@ > $(TEMPLATE_OUT_DIR)/$(addsuffix .js, $(basename $@))
+	cat $(TEMPLATE_OUT_DIR)/$(addsuffix .js, $(basename $@)) >> dist/js/templates.js
 
 clean: clear_scripts clear_templates
 

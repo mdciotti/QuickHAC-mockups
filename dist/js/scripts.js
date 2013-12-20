@@ -37,13 +37,13 @@ var LoginForm = {
 			// Prevent form from changing page
 			e.preventDefault();
 			// Disallow further input
-			LoginForm.disable();
+			LoginForm.disable(form);
 
 			// Placeholder server success
 			var success = form["username"].value === "admin" && form["password"].value === "abc" && form["id"].value === "123456";
 
 			// Placeholder server response
-			setTimeout(LoginForm.responseHandler.bind(null, !success, form), success ? 1000 : 3000);
+			setTimeout(LoginForm.responseHandler.bind(window, !success, form), success ? 1000 : 3000);
 		}, false);
 	},
 
@@ -82,8 +82,7 @@ var LoginForm = {
 			return;
 		}
 		// Login succeeded
-		// Placeholder navigation
-		window.location.href = window.location.href.replace("login.html", "dashboard.html");
+		router.navigate("dashboard", {trigger: true, replace: true});
 	},
 
 	validate: function (form) {

@@ -13,37 +13,7 @@
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 	<body>
-		<div id="controls">
-			<i class="icon-waterdrop" data-color="petermann-river"></i>
-			<i class="icon-waterdrop" data-color="turquoise"></i>
-			<i class="icon-waterdrop active" data-color="emerald"></i>
-			<i class="icon-waterdrop" data-color="sun-flower"></i>
-			<i class="icon-waterdrop" data-color="carrot"></i>
-			<i class="icon-waterdrop" data-color="pomegranate"></i>
-			<i class="icon-waterdrop" data-color="amethyst"></i>
-			<i class="icon-waterdrop" data-color="concrete"></i>
-		</div>
 		<div id="preview"></div>
 		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript">
-		$("#controls i").click(function () {
-			console.log($(this).data("color"));
-			$("#controls i").removeClass("active");
-			$(this).addClass("active");
-
-			// Add new stylesheet
-			$(document.createElement("link"))
-				.prop("rel", "stylesheet")
-				.prop("type", "text/css")
-				.prop("href", "css/main." + $(this).data("color") + ".css")
-				.appendTo("head");
-
-			// Remove old stylesheet
-			// To avoid flash of non-styled content
-			window.setTimeout(function () {
-				$("head link[href*=\"main\"]").first().remove();
-			}, 1000);
-		});
-		</script>
 	</body>
 </html>

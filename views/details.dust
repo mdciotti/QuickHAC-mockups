@@ -5,8 +5,13 @@
 {/header}
 
 {<sidebar}
-<div class="sidebar sidebar-classes">
-	<div class="view-bar">
+<div class="sidebar sidebar-courses">
+	<ul class="views">
+		{#pages}
+		<li><a href="#/{route}"><i class="{icon}"></i> <span class="title">{title}</span></a></li>
+		{/pages}
+	</ul>
+	<!--<div class="view-bar">
 		<div class="button"><i class="icon-ios7-arrow-left"></i></div>
 		<div class="menu">
 			<div class="current">Cycle {current_cycle}</div>
@@ -20,103 +25,79 @@
 			</ul>
 		</div>
 		<div class="button"><i class="icon-ios7-arrow-right"></i></div>
-	</div>
-	<ul class="views">
-		<li class="selected"><span class="average">88</span><a href="#/details/cycle/{current_cycle}/course/1" class="name">US History</a></li>
-		<li><span class="average">84</span><a href="#/details/cycle/{current_cycle}/course/2" class="name">Space Tech</a></li>
-		<li><span class="average">92</span><a href="#/details/cycle/{current_cycle}/course/3" class="name">Algebra I</a></li>
-		<li><span class="average">99</span><a href="#/details/cycle/{current_cycle}/course/4" class="name">Band 7/8</a></li>
-		<li><span class="average">90</span><a href="#/details/cycle/{current_cycle}/course/5" class="name">Science 8</a></li>
-		<li><span class="average">87</span><a href="#/details/cycle/{current_cycle}/course/6" class="name">Spanish 1 B</a></li>
-		<li><span class="average">88</span><a href="#/details/cycle/{current_cycle}/course/7" class="name">Language Arts 8</a></li>
+	</div>-->
+	<h2>Courses</h2>
+	<ul class="courses">
+		{#courses}
+		<li{?selected} class="selected"{/selected}><a href="#/details/cycle/{global.cycle}/course/{period}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
+		{/courses}
 	</ul>
-	<div class="gpa-panel">
-		<span class="gpa">4.00</span>
-	</div>
+	<h2>GPA</h2>
+	<ul>
+		<li><a href="#/gpa">4.00</a></li>
+	</ul>
 </div>
 {/sidebar}
 
 {<main_view}
 <div class="content">
-	<!-- <div class="message-empty">Select a class from the left to view grades <i class="fa fa-hand-o-left"></i></div> -->
-	<div class="message-updated">Updated 42 minutes ago</div>
-	<div class="card">
-		<h2>Completion/Daily Work <span>0</span></h2>
-		<div class="message-empty">No grades <i class="fa fa-frown-o"></i></div>
+	{?details}
+	<div class="course-header">
+		<h2>{details.courseTitle}</h2>
+		<ul class="course-details">
+			<li class="course-teacher">{details.teacherName} <a href="mailto:{details.teacherEmail}"><i class="icon-email"></i></a></li>
+			<li class="course-period">Period {details.coursePeriod}</li>
+			<li class="course-average">{details.cycleAverage}</li>
+			<li class="course-goal">{details.courseGoal}</li>
+		</ul>
+		<p class="message-updated">Updated {details.lastUpdated}</p>
 	</div>
-	<div class="card">
-		<h2>Formative <span>40</span></h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Date Due</th>
-					<th class="grade">Grade</th>
-					<th>Notes</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Unit 2 Vocab Quiz #2</td>
-					<td>4 Oct</td>
-					<td class="grade">88</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Talk of Tavern Quiz</td>
-					<td>8 Oct</td>
-					<td class="grade">96</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Unit 2 Vocab Quiz #3</td>
-					<td>11 Oct</td>
-					<td class="grade">90</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Unit 2 Vocab Quiz #4</td>
-					<td>18 Oct</td>
-					<td class="grade">94</td>
-					<td></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="2">Average</td>
-					<td class="grade">92</td>
-					<td></td>
-				</tr>
-			</tfoot>
-		</table>
-	</div>
-	<div class="card">
-		<h2>Summative <span>60</span></h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Date Due</th>
-					<th class="grade">Grade</th>
-					<th>Notes</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Unit 2 Test</td>
-					<td>11 Oct</td>
-					<td class="grade">88</td>
-					<td></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="2">Average</td>
-					<td class="grade">88</td>
-					<td></td>
-				</tr>
-			</tfoot>
-		</table>
+	{:else}
+	<div class="message-empty"><i class="fa fa-hand-o-left"></i> Select a class from the left to view grades</div>
+	{/details}
+	<div class="column">
+		{#details.categories}
+		<div class="card">
+			<h2>{title} <span class="percent">{weight}</span></h2>
+			{?assignments}
+			<table>
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th class="date">Date Assigned</th>
+						<th class="date">Date Due</th>
+						<th class="numeric">Points Earned</th>
+						<th class="numeric">Weight</th>
+						<th class="numeric">Points Possible</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{#assignments}
+					<tr>
+						<td>{title}</td>
+						<td class="date">{dateAssigned}</td>
+						<td class="date">{dateDue}</td>
+						<td class="numeric">{ptsEarned}</td>
+						<td class="numeric">{weight}</td>
+						<td class="numeric">{ptsPossible}</td>
+						<td>{note}</td>
+					</tr>
+					{/assignments}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Average</td>
+						<td class="numeric">{average}</td>
+						<td colspan="3"></td>
+					</tr>
+				</tfoot>
+			</table>
+			{:else}
+			<div class="message-empty">No grades</div>
+			{/assignments}
+		</div>
+		{/details.categories}
 	</div>
 </div>
 {/main_view}
