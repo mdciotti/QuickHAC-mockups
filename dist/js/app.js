@@ -41,12 +41,7 @@ var baseJSON = {
 			"color": "amethyst"
 		}
 	],
-	"actions": [
-		{
-			"title": "Refresh",
-			"icon": "icon-refresh"
-		}
-	],
+	"actions": [],
 	"views": [
 		{
 			"title": "Dashboard",
@@ -135,6 +130,10 @@ var Router = Backbone.Router.extend({
 	dashboard: function () {
 		var data = deepClone(baseJSON);
 		data["views"][0]["selected"] = true;
+		data["actions"].push({
+			"title": "Refresh",
+			"icon": "icon-refresh"
+		});
 
 		mainView.display("dashboard", data);
 	},
@@ -181,6 +180,11 @@ var Router = Backbone.Router.extend({
 				"icon": "icon-beaker"
 			},
 			{
+				"name": "Import & Export",
+				"route": "import-export",
+				"icon": "icon-ios7-download"
+			},
+			{
 				"name": "About",
 				"route": "preferences/about",
 				"icon": "icon-information-circled"
@@ -211,6 +215,10 @@ var Router = Backbone.Router.extend({
 		var data = deepClone(baseJSON);
 
 		data["courses"][0]["selected"] = true;
+		data["actions"].push({
+			"title": "Refresh",
+			"icon": "icon-refresh"
+		});
 
 		data["details"] = {
 			"courseTitle": "Combinatorics & Graph Theory",
@@ -353,6 +361,10 @@ var Router = Backbone.Router.extend({
 		var data = deepClone(baseJSON);
 
 		data["views"][1]["selected"] = true;
+		data["actions"].push({
+			"title": "Refresh",
+			"icon": "icon-refresh"
+		});
 
 		mainView.display("fullyear", data);
 	},

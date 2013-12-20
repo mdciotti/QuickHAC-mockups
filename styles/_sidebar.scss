@@ -35,11 +35,13 @@
 
 				i {
 					color: $sidebar-icon;
+					vertical-align: middle;
 				}
 
 				.title {
 					overflow: hidden;
 					text-overflow: ellipsis;
+					vertical-align: middle;
 				}
 			}
 

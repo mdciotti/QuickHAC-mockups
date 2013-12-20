@@ -22,45 +22,45 @@ To build styles, run `make styles`.
 
 To build everything, run `make all`.
 
-## Currently working on
+## To Do
 
-- [x] Implement templating
-- [x] Implement basic framework
-- [ ] Themes?
+* Dashboard
+* Year at a Glance
+* Preferences
+* Add student menu
+* Exam/semester grades?
+* Cycle switching (tabs in course detail view?)
+* GPA calculations page
+* Lock screen
+* Grade conditional formatting
+* Grade change indicators
+* Grade editing
+* Icon
+* Mobile mockups
+* Homepage
+* Trends
+* Print style
+* Keyboard shortcuts
+* Change pixel font sizes to em
+* Use variables for layout
+* Investigate standalone chrome app
 
-## Things to Design
+## Done
 
-- [x] Cycle view
-- [x] Login screen
-- [x] Student switching
-- [x] Course grade
-- [ ] Year view
-- [ ] Preferences
-- [ ] GPA calculations page
-- [ ] Lock screen
-- [ ] Grade conditional formatting
-- [ ] Grade change indicators
-- [ ] Grade editing
-- [ ] Exams
-- [ ] Icon
-- [ ] Mobile mockups
-- [ ] Homepage
-- [ ] Dashboard
-- [ ] Trends
-- [ ] Style `:active` states
-- [ ] Print style
+* Login screen
+* Student switching menu
+* Course grades
+* General layout
+* Templates (DustJS)
+* Basic framework (router)
 
-## Things to Figure Out
+## Ideas 
 
-- [ ] Long assignment names
-- [x] Cycle selector is not intuitive
-
-## Features 
-
-- [ ] Pull to refresh (mobile)
-- [ ] Pin (freeze) course grade edits
-- [ ] Keyboard shortcuts
-- [ ] Preview sample student in browser (without downloading extension)
+* Pull to refresh (mobile)
+* Pin (freeze) course grade edits
+* Preview sample student in browser (without downloading extension, requires Chrome)
+* Grade "watchdog" --- catches numerous missing grades or low/failed assessments, alerts the user
+* Allow users to set goals for each course, can show progress towards goal and how individual grades affect achieving that goal
 
 
 ## Things Users Would Like to See Improved
