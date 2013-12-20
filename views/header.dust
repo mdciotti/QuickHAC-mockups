@@ -20,13 +20,4 @@
 			<li><a href="#/student/guest"><i class="icon-briefcase"></i> Guest Mode</a></li>
 		</ul>
 	</div>
-	<div class="more-panel menu">
-		<i class="icon-navicon"></i>
-		<ul>
-			<li><a href="#/preferences"><i class="icon-gear-a"></i> Preferences</a></li>
-			<li><a href="https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#question"><i class="icon-help-circled"></i> Help</a></li>
-			<li><a href="https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#bug"><i class="icon-alert-circled"></i> Report Issue</a></li>
-			<li><a href="#/logout"><i class="icon-log-out"></i> Sign out</a></li>
-		</ul>
-	</div>
 </header>

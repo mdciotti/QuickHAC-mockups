@@ -921,10 +921,16 @@ i[data-color="carrot"] { color: #e67e22 !important; }
 i[data-color="pomegranate"] { color: #c0392b !important; }
 i[data-color="concrete"] { color: #95a5a6 !important; }
 
+.banner { font-size: 16px; flex: 0 0 auto; padding: 8px 16px; text-align: center; background-color: #ecf0f1; color: #423c38; }
+.banner.promotion { background-color: #2ecc71; color: #ecf0f1; }
+.banner .message-banner a { text-decoration: none; color: inherit; }
+.banner .close { float: right; display: none; }
+.banner .close:hover:before { content: '\e77f'; font-family: 'ionicons'; }
+
 .sidebar { flex: 0 0 auto; width: 256px; background-color: #4e5758; color: #ecf0f1; overflow-y: auto; overflow-x: hidden; position: relative; }
 .sidebar h2 { font-weight: 500; color: #bdc3c7; border-bottom: thin solid #7f8c8d; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin: 16px 16px 0 16px; }
 .sidebar > ul { margin: 8px 0 0 0; padding: 0; list-style-type: none; }
-.sidebar > ul li a { display: block; padding: 8px 16px; font-size: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sidebar > ul li a { display: block; padding: 8px 16px; font-size: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: inherit; text-decoration: none; }
 .sidebar > ul li a i { color: #bdc3c7; }
 .sidebar > ul li a .title { overflow: hidden; text-overflow: ellipsis; }
 .sidebar > ul li:hover:not(.selected) a { background-color: #5a6465; }
@@ -932,12 +938,6 @@ i[data-color="concrete"] { color: #95a5a6 !important; }
 .sidebar > ul li:active:not(.selected) a i { color: #ecf0f1; }
 .sidebar > ul li.selected a { background-color: #ecf0f1; color: #2ecc71; }
 .sidebar > ul li.selected a i { color: #2ecc71; }
-
-.banner { font-size: 16px; flex: 0 0 auto; padding: 8px 16px; text-align: center; background-color: #ecf0f1; color: #423c38; }
-.banner.promotion { background-color: #2ecc71; color: #ecf0f1; }
-.banner .message-banner a { text-decoration: none; color: inherit; }
-.banner .close { float: right; display: none; }
-.banner .close:hover:before { content: '\e77f'; font-family: 'ionicons'; }
 
 header { height: 48px; flex: 0 0 auto; background-color: #2ecc71; display: flex; color: white; }
 header h1 { flex: 0 0 auto; width: 256px; margin: 0; display: flex; line-height: 48px; color: white; }

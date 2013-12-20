@@ -3,6 +3,32 @@ var baseJSON = {
 		"cycle": 1,
 		"student": "Gordon Freeman"
 	},
+	"appmenu": [
+		{
+			"title": "Preferences",
+			"url": "#/preferences",
+			"icon": "icon-gear-a",
+			"external": false
+		},
+		{
+			"title": "Help",
+			"url": "https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#question",
+			"icon": "icon-help-circled",
+			"external": true
+		},
+		{
+			"title": "Report Issue",
+			"url": "https://chrome.google.com/webstore/support/dnboopdmbbpaicaphfkcphonijbfhopg?hl=en&amp;gl=US#bug",
+			"icon": "icon-alert-circled",
+			"external": true
+		},
+		{
+			"title": "Sign Out",
+			"url": "#/logout",
+			"icon": "icon-log-out",
+			"external": false
+		}
+	],
 	"students": [
 		{
 			"id": "313337",
@@ -115,6 +141,8 @@ var Router = Backbone.Router.extend({
 
 	preferences: function (category) {
 		var data = deepClone(baseJSON);
+
+		data["appmenu"][0]["selected"] = true;
 
 		data["categories"] = [
 			{

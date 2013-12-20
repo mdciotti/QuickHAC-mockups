@@ -4,7 +4,7 @@
 		<li{?selected} class="selected"{/selected}><a href="#/{route}"><i class="{icon}"></i> <span class="title">{title}</span></a></li>
 		{/views}
 	</ul>
-	<!--<div class="view-bar">
+	{!<div class="view-bar">
 		<div class="button"><i class="icon-ios7-arrow-left"></i></div>
 		<div class="menu">
 			<div class="current">Cycle {current_cycle}</div>
@@ -18,15 +18,21 @@
 			</ul>
 		</div>
 		<div class="button"><i class="icon-ios7-arrow-right"></i></div>
-	</div>-->
+	</div>!}
 	<h2>Courses</h2>
 	<ul class="courses">
 		{#courses}
 		<li{?selected} class="selected"{/selected}><a href="#/details/cycle/{global.cycle}/course/{period}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
 		{/courses}
 	</ul>
-	<!--<h2>GPA</h2>
+	{!<h2>GPA</h2>
 	<ul>
 		<li><a href="#/gpa">4.00</a></li>
-	</ul>-->
+	</ul>!}
+	<h2>More</h2>
+	<ul>
+		{#appmenu}
+		<li{?selected} class="selected"{/selected}><a href="{url}"{?external} target="_blank"{/external}><i class="{icon}"></i> <span class="title">{title}</span></a></li>
+		{/appmenu}
+	</ul>
 </div>
