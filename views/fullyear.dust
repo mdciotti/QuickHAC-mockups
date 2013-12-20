@@ -1,0 +1,19 @@
+{>main/}
+
+{<header}
+{>header/}
+{/header}
+
+{<sidebar}
+{>sidebar/}
+{/sidebar}
+
+{<main_view}
+<div class="content">
+	<h2>Year at a Glance</h2>
+</div>
+{/main_view}
+
+{<banner}
+{>banner/}
+{/banner}

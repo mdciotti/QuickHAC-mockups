@@ -5,26 +5,17 @@
 {/header}
 
 {<sidebar}
-<div class="sidebar sidebar-preferences">
+{>sidebar/}
+{/sidebar}
+
+{<main_view}
+<div class="content">
 	<h2>Preferences</h2>
 	<ul class="categories">
 		{#categories}
 		<li{?selected} class="selected"{/selected}><a href="#/{route}"><i class="{icon}"></i> <span class="title">{name}</span></a></li>
 		{/categories}
 	</ul>
-</div>
-{/sidebar}
-
-{<main_view}
-<div class="content">
-	{#sections}
-	<div class="card">
-		<h2>{title}</h2>
-		{#options}
-		<label><input type="checkbox" /> {name}</label>
-		{/options}
-	</div>
-	{/sections}
 </div>
 {/main_view}
 

@@ -5,38 +5,7 @@
 {/header}
 
 {<sidebar}
-<div class="sidebar sidebar-courses">
-	<ul class="views">
-		{#pages}
-		<li><a href="#/{route}"><i class="{icon}"></i> <span class="title">{title}</span></a></li>
-		{/pages}
-	</ul>
-	<!--<div class="view-bar">
-		<div class="button"><i class="icon-ios7-arrow-left"></i></div>
-		<div class="menu">
-			<div class="current">Cycle {current_cycle}</div>
-			<ul>
-				<li><a href="#/details/cycle/1">Cycle 1</a></li>
-				<li><a href="#/details/cycle/2">Cycle 2</a></li>
-				<li><a href="#/details/cycle/3">Cycle 3</a></li>
-				<li><a href="#/details/cycle/4">Cycle 4</a></li>
-				<li><a href="#/details/cycle/5">Cycle 5</a></li>
-				<li><a href="#/details/cycle/6">Cycle 6</a></li>
-			</ul>
-		</div>
-		<div class="button"><i class="icon-ios7-arrow-right"></i></div>
-	</div>-->
-	<h2>Courses</h2>
-	<ul class="courses">
-		{#courses}
-		<li{?selected} class="selected"{/selected}><a href="#/details/cycle/{global.cycle}/course/{period}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
-		{/courses}
-	</ul>
-	<h2>GPA</h2>
-	<ul>
-		<li><a href="#/gpa">4.00</a></li>
-	</ul>
-</div>
+{>sidebar/}
 {/sidebar}
 
 {<main_view}
