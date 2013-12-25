@@ -22,7 +22,7 @@
 	<h2>Courses</h2>
 	<ul class="courses">
 		{#courses}
-		<li{?selected} class="selected"{/selected}><a href="#/details/cycle/{global.cycle}/course/{period}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
+		<li{?selected} class="selected"{/selected}><a href="#/details/course/{period}/cycle/{global.cycle}"><span class="title">{title}</span> <span class="average">{average}</span></a></li>
 		{/courses}
 	</ul>
 	{!<h2>GPA</h2>

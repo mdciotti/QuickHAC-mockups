@@ -1,69 +1,6 @@
 .sidebar {
 
-	.views li a {
-		line-height: 2;
-
-		i {
-			font-size: 2em;
-			line-height: 0;
-			vertical-align: middle;
-		}
-		.title {
-			vertical-align: middle;
-		}
-	}
-
-	.view-bar {
-		display: flex;
-		height: 32px;
-		color: $header-text;
-
-		.button {
-			flex: 0 0 32px;
-			padding: 6px;
-			background-color: $header-bg;
-			color: $header-text;
-			text-align: center;
-			font-size: 20px;
-			font-weight: 700;
-
-			&:hover:not(.selected) {
-				background-color: $header-highlight-bg;
-				color: $header-highlight-text;
-			}
-
-			&.selected {
-				background-color: $header-selected-bg;
-				color: $header-selected-text;
-			}
-		}
-		.menu {
-			flex: 1 1 auto;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-
-			.current {
-				text-align: center;
-				line-height: 32px;
-				// font-weight: $font-weight-heavy;
-				// color: $header-text;
-			}
-
-			ul {
-				width: 100%;
-				top: 16px;
-				text-align: center;
-				text-transform: uppercase;
-			}
-
-			&:hover ul {
-				top: 32px;
-			}
-		}
-	}
-
 	.courses {
-		// margin-top: 0;
 
 		li {
 			a {
@@ -82,20 +19,19 @@
 				flex: 0 0 auto;
 				order: 2;
 				display: block;
-				float: left;
-				width: 36px;
+				// width: 36px;
 				height: 36px;
+				padding-left: $gutter-width / 2;
+				padding-right: $gutter-width;
 				line-height: 36px;
-				text-align: center;
-				font-size: 16px;
-				margin: -8px -16px -8px 0;
+				text-align: right;
+				font-size: $font-size-base;
+				margin: (-$gutter-width / 2) (-$gutter-width) (-$gutter-width / 2) 0;
 				font-weight: $font-weight-heavy;
-				// background-color: $theme-menu-highlight;
 				color: $sidebar-icon;
 			}
 
 			&.selected .average {
-				// background-color: $theme-color;
 				color: $sidebar-selected-text;
 			}
 
@@ -128,7 +64,7 @@
 		margin: 16px;
 	}
 
-	.course-header {
+	.content-header {
 		margin: 16px auto;
 		padding: 0 16px;
 		max-width: 800px;
@@ -192,30 +128,103 @@
 			text-transform: lowercase;
 			margin: 0.5em 0 0 0;
 		}
+
+		.tab-bar {
+			list-style-type: none;
+			margin: (2 * $gutter-width) 0;
+			padding: 0;
+			display: flex;
+			border-bottom: 2px solid $content-empty-text;
+			font-weight: $font-weight-heavy;
+			text-transform: uppercase;
+			font-size: 0.75 * $font-size-base;
+			letter-spacing: 1px;
+
+			li {
+				flex: 0 0 auto;
+				border-bottom: 2px solid transparent;
+				margin-bottom: -2px;
+				padding: $gutter-width / 2;
+
+				&.selected {
+					border-bottom-color: $color;
+					color: $color;
+				}
+
+				&:hover {
+					color: $color;
+				}
+			}
+		}
 	}
 
-	.column {
-		margin: 16px auto;
-		padding: 0 16px;
+	.tab-container {
+		display: flex;
+
+		.tab-pane {
+			flex: 0 1 $tab-pane-width;
+			border-right: thin solid $content-empty-text;
+			margin-right: $gutter-width;
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					a {
+						display: block;
+						padding: $gutter-width / 2;
+						font-size: 1.2 * $font-size-base;
+						border-top: thin solid $content-empty-text;
+
+						.title {
+							vertical-align: middle;
+						}
+
+						i {
+							font-size: 32px;
+							vertical-align: middle;
+						}
+					}
+
+					&.selected a {
+						background-color: $content-empty-text;
+					}
+
+					&:not(:selected):hover a {
+						color: $color;
+					}
+
+					&:last-child a {
+						border-bottom: thin solid $content-empty-text;
+					}
+				}
+			}
+		}
+
+		.tab-view {
+			flex: 1 1 auto;
+		}
+	}
+
+	.column, .tab-container {
+		margin: $gutter-width auto;
+		padding: 0 $gutter-width;
 		max-width: 800px;
 		min-width: 600px;
 	}
 
 	.card {
-		margin-bottom: 16px;
-		background-color: $card-bg;
-		color: $card-text;
-		padding: 16px;
-		box-shadow: 0 2px 0 rgba(0,0,0,0.25);
 
 		.message-empty {
-			margin: 32px auto;
+			margin: (2 * $gutter-width) auto;
 		}
 
-		h2 {
+		h2, h3 {
 			margin: 0;
-			font-weight: 100;
-			font-size: 24px;
+			font-weight: $font-weight-light;
+			font-size: 1.5 * $font-size-base;
 			letter-spacing: 1px;
 
 			span {
@@ -233,16 +242,16 @@
 		table {
 			border-collapse: collapse;
 			boder-spacing: none;
-			margin-top: 16px;
+			margin-top: $gutter-width;
 			width: 100%;
 			line-height: 1.5;
 
 			th, tfoot td:first-child {
-				font-weight: 700;
+				font-weight: $font-weight-heavy;
 				text-transform: uppercase;
 				color: $card-text-light;
 				letter-spacing: 1px;
-				font-size: 12px;
+				font-size: 0.75 * $font-size-base;
 				vertical-align: bottom;
 
 				&:not(.grade) {
@@ -273,7 +282,7 @@
 
 			tfoot tr td {
 				border-top: thin solid $content-empty-text;
-				font-weight: 700;
+				font-weight: $font-weight-heavy;
 			}
 		}
 	}

@@ -3,6 +3,8 @@ header {
 	height: $header-height;
 	flex: 0 0 auto;
 	background-color: $header-bg;
+	background-image: $header-img;
+	background-size: 360px $header-height;
 	display: flex;
 	color: $header-text;
 
@@ -10,9 +12,11 @@ header {
 		flex: 0 0 auto;
 		width: $sidebar-width;
 		margin: 0;
+		padding: 0 $gutter-width / 2;
 		display: flex;
 		line-height: $header-height;
 		color: $header-logo;
+		-webkit-font-smoothing: antialiased;
 
 		i {
 			flex: 0 0 auto;
@@ -26,6 +30,11 @@ header {
 
 		.app-name {
 			flex: 1 1 auto;
+			font-weight: $font-weight-base;
+
+			span {
+				font-weight: $font-weight-black;
+			}
 		}
 	}
 
@@ -36,38 +45,36 @@ header {
 		list-style-type: none;
 		display: flex;
 		justify-content: flex-end;
+	}
 
-		li {
-			flex: 0 0 auto;
+	.action-bar > li, .popover-button {
+		flex: 0 0 auto;
+		color: inherit;
+
+		&:hover {
+			background-color: $header-highlight-bg;
+			color: $header-highlight-text;
+		}
+
+		& > i, & > label > i {
 			width: $header-height;
-			font-size: $header-icon-size;
-			line-height: $header-height;
 			text-align: center;
-			color: inherit;
+			font-size: $header-icon-size;
+			display: block;
+			line-height: $header-height;
+		}
 
-			&:hover:not(.selected) {
-				background-color: $header-highlight-bg;
-				color: $header-highlight-text;
-			}
-			&:active i {
-				transform: scale(0.9);
-			}
-
-			&.selected {
-				background-color: $header-selected-bg;
-				color: $header-selected-text;
-			}
+		& > i:active, & > label > i:active {
+			-webkit-transform: scale(0.9);
 		}
 	}
+
 	.menu {
 		// flex: 1 1 auto;
-		font-size: $font-size-base;
 		// text-align: right;
 		display: flex;
-
-		&:hover ul {
-			top: $header-height;
-		}
+		-webkit-font-smoothing: antialiased;
+		font-weight: $font-weight-normal;
 
 		& > i {
 			flex: 0 1 auto;
@@ -78,8 +85,10 @@ header {
 		}
 
 		ul {
+			font-size: $font-size-base;
 			flex: 0 1 auto;
-			top: $header-height - $gutter-width;
+			top: $header-height;
+			-webkit-transform: translate3d(0, -$gutter-width, 0);
 
 			li {
 
@@ -95,29 +104,39 @@ header {
 				}
 			}
 		}
+
+		// &:hover ul {
+		// 	-webkit-transform: translate3d(0, 0, 0);
+		// }
 	}
 
 	.student-panel {
 		flex: 0 1 auto;
-		.student {
-			text-align: right;
-			padding: 0 0 0 $gutter-width;
-			line-height: $header-height;
+
+		label > i {
+			display: inline-block;
+			font-size: inherit;
 		}
+
 		ul {
-			width: 100%;
+			width: 200px;
+			background-color: $content-empty-text;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+			color: $body-text;
 			// top: $header-height + 16px;
-		}
-	}
-	.more-panel {
-		flex: 0 1 auto;
 
-		& > i {
-			font-size: $header-icon-size;
-		}
+			li {
+				a {
+					display: block;
+					padding: $gutter-width / 2;
+				}
 
-		ul {
-			width: 3 / 4 * $sidebar-width;
+				&:hover {
+					color: $color;
+				}
+			}
 		}
 	}
 }

@@ -11,7 +11,7 @@
 {<main_view}
 <div class="content">
 	{?details}
-	<div class="course-header">
+	<div class="content-header">
 		<h2>{details.courseTitle}</h2>
 		<ul class="course-details">
 			<li class="course-teacher">{details.teacherName} <a href="mailto:{details.teacherEmail}"><i class="icon-email"></i></a></li>
@@ -20,6 +20,14 @@
 			<li class="course-goal">{details.courseGoal}</li>
 		</ul>
 		<p class="message-updated">Updated {details.lastUpdated}</p>
+		<ul class="tab-bar">
+			<li class="selected"><a href="#/details/course/{details.coursePeriod}/cycle/1">Cycle 1</a></li>
+			<li><a href="#/details/course/{details.coursePeriod}/cycle/2">Cycle 2</a></li>
+			<li><a href="#/details/course/{details.coursePeriod}/cycle/3">Cycle 3</a></li>
+			<li><a href="#/details/course/{details.coursePeriod}/cycle/4">Cycle 4</a></li>
+			<li><a href="#/details/course/{details.coursePeriod}/cycle/5">Cycle 5</a></li>
+			<li><a href="#/details/course/{details.coursePeriod}/cycle/6">Cycle 6</a></li>
+		</ul>
 	</div>
 	{:else}
 	<div class="message-empty"><i class="fa fa-hand-o-left"></i> Select a class from the left to view grades</div>

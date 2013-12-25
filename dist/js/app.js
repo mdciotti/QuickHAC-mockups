@@ -42,6 +42,44 @@ var baseJSON = {
 		}
 	],
 	"actions": [],
+	"notifications": [
+		{
+			"date": "Oct 16",
+			"title": "Gordon Freeman",
+			"message": "New grade in Combinatorics & Graph Theory",
+			"detail": "Scored 98 on \"Combinatorics Test\"",
+			"route": "details/course/1/cycle/1",
+			"icon": "fa fa-arrow-circle-o-up",
+			"unread": true
+		},
+		{
+			"date": "Oct 8",
+			"title": "Alyx Vance",
+			"message": "New grade in Language Arts",
+			"detail": "Scored 92 on \"Persuasive Essay\"",
+			"route": "details/course/1/cycle/1",
+			"icon": "fa fa-arrow-circle-o-up",
+			"unread": true
+		},
+		{
+			"date": "Oct 2",
+			"title": "Gordon Freeman",
+			"message": "New grade in Combinatorics & Graph Theory",
+			"detail": "Scored 100 on \"Combinatorics Review\"",
+			"route": "details/course/1/cycle/1",
+			"icon": "fa fa-arrow-circle-o-up",
+			"unread": false
+		},
+		{
+			"date": "Sep 25",
+			"title": "Gordon Freeman",
+			"message": "New grade in Combinatorics & Graph Theory",
+			"detail": "Scored 90 on \"Combinatorics and Probability Quiz\"",
+			"route": "details/course/1/cycle/1",
+			"icon": "fa fa-arrow-circle-o-up",
+			"unread": false
+		}
+	],
 	"views": [
 		{
 			"title": "Dashboard",
@@ -112,7 +150,7 @@ var Router = Backbone.Router.extend({
 		"preferences": "preferences",
 		"preferences/:category": "preferences",
 		"details": "details",
-		"details/cycle/:cycle/course/:courseID": "details",
+		"details/course/:courseID/cycle/:cycle": "details",
 		"fullyear": "fullyear",
 		"gpa": "gpa"
 	},
@@ -145,68 +183,71 @@ var Router = Backbone.Router.extend({
 
 		data["categories"] = [
 			{
-				"name": "General",
+				"title": "General",
 				"route": "preferences/general",
-				"icon": "icon-gear-a"
+				"icon": "icon-gear-a",
+				"selected": true
 			},
 			{
-				"name": "Notifications",
-				"route": "preferences/notifications",
-				"icon": "icon-ios7-bell"
-			},
-			{
-				"name": "Colorization",
-				"route": "preferences/colorization",
-				"icon": "icon-waterdrop"
-			},
-			{
-				"name": "Students",
+				"title": "Students",
 				"route": "preferences/students",
 				"icon": "icon-person-stalker"
 			},
 			{
-				"name": "Refresh",
-				"route": "preferences/refresh",
-				"icon": "icon-refresh"
-			},
-			{
-				"name": "Security",
+				"title": "Security",
 				"route": "preferences/security",
 				"icon": "icon-locked"
 			},
 			{
-				"name": "Experimental",
+				"title": "Experimental",
 				"route": "preferences/experimental",
 				"icon": "icon-beaker"
 			},
 			{
-				"name": "Import & Export",
-				"route": "import-export",
+				"title": "Import & Export",
+				"route": "preferences/import-export",
 				"icon": "icon-ios7-download"
 			},
 			{
-				"name": "About",
+				"title": "About",
 				"route": "preferences/about",
 				"icon": "icon-information-circled"
 			}
 		];
 
-		data["details"] = [
-			{
-				"title": "Consolidate Updates",
-				"caption": "Notify once for all grade changes, instead of once for each individual change. This is required if password lock is enabled.",
-				"type": "toggle",
-				"id": "notif_consolidate",
-				"defaultValue": false
-			},
-			{
-				"title": "Auto-Hide Duration",
-				"caption": "Duration in seconds to display the notification. Set to 0 to disable auto-hide (manual notification dismissal).",
-				"type": "number",
-				"id": "notif_duration",
-				"defaultValue": "5"
-			}
-		];
+		data["details"] = {
+			"sections": [
+				{
+					"title": "Refresh",
+					"icon": "icon-refresh"
+				},
+				{
+					"title": "Notifications",
+					"icon": "icon-ios7-bell",
+					"options": [
+						{
+							"title": "Consolidate Updates",
+							"caption": "Notify once for all grade changes, instead of once for each individual change. This is required if password lock is enabled.",
+							"type": "toggle",
+							"id": "notif_consolidate",
+							"value": false
+						},
+						{
+							"title": "Auto-Hide Duration",
+							"caption": "Duration in seconds to display the notification. Set to 0 to disable auto-hide (manual notification dismissal).",
+							"type": "number",
+							"id": "notif_duration",
+							"value": 5
+						}
+					]
+				},
+				{
+					"title": "Colorization",
+					"route": "preferences/colorization",
+					"icon": "icon-waterdrop"
+				}
+			]
+		};
 
 		mainView.display("preferences", data);
 	},
@@ -236,7 +277,7 @@ var Router = Backbone.Router.extend({
 					"average": 100,
 					"assignments": [
 						{
-							"title": "Factorials",
+							"title": "Factorials Worksheet",
 							"dateDue": "Sep 4",
 							"dateAssigned": "Aug 28",
 							"ptsEarned": 100,
@@ -246,7 +287,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Permutations",
+							"title": "Permutations Worksheet",
 							"dateDue": "Sep 11",
 							"dateAssigned": "Sep 4",
 							"ptsEarned": 100,
@@ -256,7 +297,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Combinations",
+							"title": "Combinations Worksheet",
 							"dateDue": "Sep 18",
 							"dateAssigned": "Sep 11",
 							"ptsEarned": 90,
@@ -266,7 +307,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Combinatorics and Probability",
+							"title": "Combinatorics and Probability Worksheet",
 							"dateDue": "Sep 25",
 							"dateAssigned": "Sep 18",
 							"ptsEarned": 100,
@@ -293,7 +334,7 @@ var Router = Backbone.Router.extend({
 					"average": 95,
 					"assignments": [
 						{
-							"title": "Factorials",
+							"title": "Factorials Quiz",
 							"dateDue": "Sep 4",
 							"dateAssigned": "Sep 4",
 							"ptsEarned": 100,
@@ -303,7 +344,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Permutations",
+							"title": "Permutations Quiz",
 							"dateDue": "Sep 11",
 							"dateAssigned": "Sep 11",
 							"ptsEarned": 100,
@@ -313,7 +354,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Combinations",
+							"title": "Combinations Quiz",
 							"dateDue": "Sep 18",
 							"dateAssigned": "Sep 18",
 							"ptsEarned": 90,
@@ -323,7 +364,7 @@ var Router = Backbone.Router.extend({
 							"extraCredit": false
 						},
 						{
-							"title": "Combinatorics and Probability",
+							"title": "Combinatorics and Probability Quiz",
 							"dateDue": "Sep 25",
 							"dateAssigned": "Sep 25",
 							"ptsEarned": 90,
@@ -340,7 +381,7 @@ var Router = Backbone.Router.extend({
 					"average": 98,
 					"assignments": [
 						{
-							"title": "Test 1",
+							"title": "Combinatorics Test",
 							"dateDue": "Oct 9",
 							"dateAssigned": "Oct 9",
 							"ptsEarned": 98,

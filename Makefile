@@ -1,7 +1,7 @@
 TEMPLATE_ENGINE = dustc
 TEMPLATE_SRC_DIR = views
 TEMPLATE_OUT_DIR = compiled_templates
-TEMPLATES = banner.dust dashboard.dust details.dust fullyear.dust header.dust login.dust main.dust preferences.dust sidebar.dust
+TEMPLATES = banner.dust dashboard.dust details.dust fullyear.dust header.dust login.dust main.dust notifications.dust preferences.dust sidebar.dust
 
 SCRIPT_COMPILER = dart2js
 SCRIPT_SRC_DIR = scripts

@@ -42,7 +42,7 @@ The following is the data used to create the student switch dropdown. Note that 
 
 ## Detail View
 
-The following is a JSON object for rendering the details of a single cycle for one class.
+The following is a JSON object for rendering the details of a single cycle for one class. Note that the weight values should be given as numeric percentages.
 
 ```json
 {

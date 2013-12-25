@@ -2,9 +2,11 @@
 {?active}
 <div class="banner {type}">
 	<span class="message-banner">
-		{?url}<a href="{url}">{/url}
-			{text|s}
-		{?url}</a>{/url}
+		{?url}
+		<a href="{url}">{text|s}</a>
+		{:else}
+		{text|s}
+		{/url}
 	</span>
 	<i class="close icon-close-circled"></i>
 </div>
