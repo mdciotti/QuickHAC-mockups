@@ -20,7 +20,7 @@
 			<label class="text-input input-password"><input type="password" name="password" placeholder="HAC Password" tabindex="4" autocomplete="off" required /><i class="icon-key"></i></label>
 			<label class="text-input input-id"><input type="text" name="id" placeholder="Student ID" tabindex="5" autocomplete="off" required pattern="\d+" /><i class="icon-card"></i></label>
 		</div>
-		<a href="https://accesscenter.roundrockisd.org/homeaccess/Register/ForgotCredentials.aspx">Lost your password?</a>
+		<a href="https://accesscenter.roundrockisd.org/homeaccess/Register/ForgotCredentials.aspx" target="_blank">Lost your password?</a>
 		<i class="icon-ionic busy-indicator"></i>
 	</form>
 </div>
