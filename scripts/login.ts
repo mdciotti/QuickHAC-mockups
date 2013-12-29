@@ -88,7 +88,7 @@ var LoginForm = {
 		// Login succeeded
 		// Setup students
 		// Navigate to dashboard of first student
-		// router.navigate("dashboard", {trigger: true, replace: true});
+		router.navigate("student/101010/dashboard", {trigger: true, replace: true});
 	},
 
 	// Check to see if credentials are of a valid format
