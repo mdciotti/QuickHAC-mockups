@@ -918,7 +918,7 @@ input.dropdown-toggle { -webkit-appearance: none; border: 0; margin: 0; padding:
 .popover-button .popover-title:empty { display: none; }
 .popover-button .popover-title:empty + i { margin-top: -16px; }
 .popover-button .popover { padding: 16px 8px 8px 8px; position: absolute; top: 48px; right: 8px; }
-.popover-button .popover ul { max-height: 400px; overflow-y: auto; box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.75); }
+.popover-button .popover ul { max-height: 400px; overflow-y: auto; box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.25); }
 .popover-button .popover-triangle { display: block; position: absolute; top: 0; width: 0; height: 0; border-bottom: 16px solid #bdc3c7; border-left: 16px solid transparent; border-right: 16px solid transparent; margin-left: 8px; margin-top: 48px; }
 
 .flex-space { flex: 1 1 auto; }

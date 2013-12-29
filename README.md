@@ -1,6 +1,6 @@
 # QuickHAC Version 3.0 Mockups
 
-Please refer to http://github.com/xsznix/hacacess for the QuickHAC project.
+Please refer to https://github.com/quickhac/qhac-common for the core QuickHAC project.
 
 This repository contains the design mockups for the upcoming version 3.0 of QuickHAC.
 
@@ -12,7 +12,7 @@ You will need to run `bower install` in order to install all dependencies. This 
 
 ## Usage
 
-Open up `dist/index.html` in Chrome.
+Open up `dist/index.html` in Chrome. Everything should run fine, no need to build anything. If you make any modifications to the styles or templates, however, you'll have to rebuild.
 
 To build scripts, run `make scripts`.
 
@@ -22,31 +22,36 @@ To build styles, run `make styles`.
 
 To build everything, run `make all`.
 
+If you add a new style, make sure to add an `@import` rule for it in the `main.scss` file. If you add a new template or script, make sure to add it in the `Makefile`. Please note that scripts are currently just copied, not compiled (write them in JS for now), and that I will eventually switch to TypeScript.
+
 ## To Do
 
-* Dashboard
-* Year at a Glance
-* Preferences
-* Add student menu
 * Exam/semester grades?
-* Cycle switching (tabs in course detail view?)
-* GPA calculations page
-* Lock screen
-* Grade conditional formatting
-* Grade change indicators
-* Grade editing
+* Dashboard (year at a glance)
 * Icon
+* Add student menu
+* Lock screen
+* Grade editing
 * Mobile mockups
 * Homepage
+* Investigate standalone chrome app
+* GPA calculations page
+* Full page animations (and sidebar)
+* Grade conditional formatting
+* Grade change indicators
 * Trends
 * Print style
 * Keyboard shortcuts
+
+## In Progress
+
 * Change pixel font sizes to em
 * Use variables for layout
-* Investigate standalone chrome app
+* Preferences
 
 ## Done
 
+* Cycle switching
 * Login screen
 * Student switching menu
 * Course grades
