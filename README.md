@@ -22,7 +22,7 @@ To build styles, run `make styles`.
 
 To build everything, run `make all`.
 
-If you add a new style, make sure to add an `@import` rule for it in the `main.scss` file. If you add a new template or script, make sure to add it in the `Makefile`. Please note that scripts are currently just copied, not compiled (write them in JS for now), and that I will eventually switch to TypeScript.
+If you add a new style, make sure to add an `@import` rule for it in the `main.scss` file. If you add a new template or script, make sure to add it in the `Makefile`.
 
 ## To Do
 
