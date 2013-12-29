@@ -23,7 +23,7 @@
 	<div class="student-panel popover-button">
 		<label>
 			<input type="radio" name="focus" class="dropdown-toggle" />
-			<span class="popover-title">{global.student}</span>
+			<span class="popover-title">{global.studentName}</span>
 			<i class="icon-chevron-down"></i>
 			<div class="popover">
 				<ul>

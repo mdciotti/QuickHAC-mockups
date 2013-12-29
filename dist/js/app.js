@@ -1,7 +1,8 @@
 var baseJSON = {
 	"global": {
 		"cycle": 1,
-		"student": "Gordon Freeman"
+		"studentName": "Gordon Freeman",
+		"studentID": "101010"
 	},
 	"appmenu": [
 		{
@@ -47,8 +48,8 @@ var baseJSON = {
 			"date": "Oct 16",
 			"title": "Gordon Freeman",
 			"message": "New grade in Combinatorics & Graph Theory",
-			"detail": "Scored 98 on \"Combinatorics Test\"",
-			"route": "details/course/1/cycle/1",
+			"detail": "Scored 98 on &ldquo;Combinatorics Test&rdquo;",
+			"route": "student/101010/course/1/cycle/1",
 			"icon": "fa fa-arrow-circle-o-up",
 			"unread": true
 		},
@@ -56,8 +57,8 @@ var baseJSON = {
 			"date": "Oct 8",
 			"title": "Alyx Vance",
 			"message": "New grade in Language Arts",
-			"detail": "Scored 92 on \"Persuasive Essay\"",
-			"route": "details/course/1/cycle/1",
+			"detail": "Scored 92 on &ldquo;Persuasive Essay&rdquo;",
+			"route": "student/011235/course/1/cycle/1",
 			"icon": "fa fa-arrow-circle-o-up",
 			"unread": true
 		},
@@ -65,8 +66,8 @@ var baseJSON = {
 			"date": "Oct 2",
 			"title": "Gordon Freeman",
 			"message": "New grade in Combinatorics & Graph Theory",
-			"detail": "Scored 100 on \"Combinatorics Review\"",
-			"route": "details/course/1/cycle/1",
+			"detail": "Scored 100 on &ldquo;Combinatorics Review&rdquo;",
+			"route": "student/101010/course/1/cycle/1",
 			"icon": "fa fa-arrow-circle-o-up",
 			"unread": false
 		},
@@ -74,8 +75,8 @@ var baseJSON = {
 			"date": "Sep 25",
 			"title": "Gordon Freeman",
 			"message": "New grade in Combinatorics & Graph Theory",
-			"detail": "Scored 90 on \"Combinatorics and Probability Quiz\"",
-			"route": "details/course/1/cycle/1",
+			"detail": "Scored 90 on &ldquo;Combinatorics and Probability Quiz&rdquo;",
+			"route": "student/101010/course/1/cycle/1",
 			"icon": "fa fa-arrow-circle-o-up",
 			"unread": false
 		}
@@ -85,11 +86,6 @@ var baseJSON = {
 			"title": "Dashboard",
 			"route": "dashboard",
 			"icon": "icon-stats-bars"
-		},
-		{
-			"title": "Year at a Glance",
-			"route": "fullyear",
-			"icon": "icon-grid"
 		}
 	],
 	"courses": [
@@ -146,13 +142,11 @@ var Router = Backbone.Router.extend({
 	routes: {
 		"login": "login",
 		"logout": "logout",
-		"dashboard": "dashboard",
+		"student/:studentID/dashboard": "dashboard",
 		"preferences": "preferences",
 		"preferences/:category": "preferences",
-		"details": "details",
-		"details/course/:courseID/cycle/:cycle": "details",
-		"fullyear": "fullyear",
-		"gpa": "gpa"
+		"student/:studentID/course/:courseID/cycle/:cycle": "course",
+		"student/:studentID/gpa": "gpa"
 	},
 
 	login: function () {
@@ -165,7 +159,7 @@ var Router = Backbone.Router.extend({
 		router.navigate("login", {trigger: true, replace: true});
 	},
 
-	dashboard: function () {
+	dashboard: function (studentID) {
 		var data = deepClone(baseJSON);
 		data["views"][0]["selected"] = true;
 		data["actions"].push({
@@ -252,7 +246,7 @@ var Router = Backbone.Router.extend({
 		mainView.display("preferences", data);
 	},
 
-	details: function (courseID) {
+	course: function (studentID, courseID, cycle) {
 		var data = deepClone(baseJSON);
 
 		data["courses"][0]["selected"] = true;
@@ -395,22 +389,10 @@ var Router = Backbone.Router.extend({
 			]
 		};
 
-		mainView.display("details", data);
+		mainView.display("course", data);
 	},
 
-	fullyear: function () {
-		var data = deepClone(baseJSON);
-
-		data["views"][1]["selected"] = true;
-		data["actions"].push({
-			"title": "Refresh",
-			"icon": "icon-refresh"
-		});
-
-		mainView.display("fullyear", data);
-	},
-
-	gpa: function () {
+	gpa: function (studentID) {
 		var data = deepClone(baseJSON);
 
 		// mainView.display("gpa", data);
@@ -446,5 +428,5 @@ var mainView = new MainView();
 Backbone.history.start({pushState: false});
 
 if (window.location.hash === "") {
-	router.navigate("details", {trigger: true, replace: true});	
+	router.navigate("login", {trigger: true, replace: true});	
 }

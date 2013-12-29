@@ -1,6 +1,4 @@
 
-@import '_variables.scss';
-
 .login {
 	flex: 0 0 auto;
 	// width: 332px;
@@ -14,18 +12,18 @@
 		text-align: center;
 
 		i {
-			font-size: 128px;
+			font-size: $app-icon-size;
 			display: block;
-			height: 128px;
-			color: $app-icon;
+			height: $app-icon-size;
+			color: $app-icon-color;
 			// text-shadow: 0 2px rgba(0,0,0,0.2);
 		}
 
 		.message-welcome {
 			display: block;
-			font-size: 24px;
+			font-size: 1.5 * $font-size-base;
 			margin-top: $gutter-width;
-			color: $clouds;
+			color: $app-welcome-text;
 			line-height: 1.2;
 		}
 	}
@@ -35,9 +33,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		transform: perspective(100px) translateZ(0px);
+		-webkit-transform: perspective(100px) translate3d(0, 0, 0);
 		opacity: 1;
-		transition: transform 0.5s $ease-out-back, opacity 0.5s $ease-out-expo;
+		-webkit-transition: -webkit-transform 0.5s $ease-out-back, opacity 0.5s $ease-out-expo;
 
 		.split-button-group {
 			display: flex;
@@ -63,7 +61,6 @@
 					}
 					&:checked + span {
 						background-color: $panel-bg;
-						font-weight: $font-weight-heavy;
 						color: $panel-input-focus-border;
 					}
 				}
@@ -71,17 +68,19 @@
 					display: block;
 					text-align: center;
 					font-size: $font-size-base;
-					font-weight: $font-weight-heavy;
+					font-weight: $font-weight-medium;
 					padding: 8px 12px;
 					outline: none;
 					color: $panel-tabs-text;
+					letter-spacing: 1px;
 				}
 			}
 		}
 
 		.input-group {
+			@include dropshadow;
+
 			background-color: $panel-bg;
-			box-shadow: 0 2px rgba(0,0,0,0.15);
 			padding: $gutter-width;
 			position: relative;
 			width: 100%;
@@ -98,9 +97,9 @@
 				margin: auto;
 				width: 0;
 				height: 0;
-				border-right: 16px solid $panel-bg;
-				border-top: 16px solid transparent;
-				border-bottom: 16px solid transparent;
+				border-right: $gutter-width solid $panel-bg;
+				border-top: $gutter-width solid transparent;
+				border-bottom: $gutter-width solid transparent;
 			}
 
 			& > label {
@@ -173,8 +172,8 @@
 			color: $panel-submit-text;
 			outline: none;
 			box-shadow: 0 2px rgba(0,0,0,0.15);
-			transform: translateY(-16px);
-			transition: transform 0.5s $ease-out-expo, opacity 0.5s $ease-out-expo;
+			-webkit-transform: translate3d(0, -16px, 0);
+			-webkit-transition: -webkit-transform 0.5s $ease-out-expo, opacity 0.5s $ease-out-expo;
 
 			.available {
 				display: block;
@@ -187,11 +186,11 @@
 			&:focus:not(:hover) {
 				// background-color: $theme-light;
 				// color: $theme-color;
-				transform: translateY(0px);
+				-webkit-transform: translate3d(0, 0, 0);
 				opacity: 0.8;
 			}
 			&:hover:not(:disabled) {
-				transform: translateY(0px);
+				-webkit-transform: translate3d(0, 0, 0);
 				opacity: 0.8;
 			}
 			&:active:not(:disabled) {
@@ -199,12 +198,13 @@
 				color: $panel-submit-active-text;
 			}
 			&:disabled {
-				transform: translateY(-100%);
+				-webkit-transform: translate3d(0, -100%, 0);
 				background-color: $panel-submit-disabled-bg;
 				color: $panel-submit-disabled-text;
 				opacity: 0;
 			}
 		}
+
 		a {
 			color: $link-text;
 			display: block;
@@ -220,14 +220,13 @@
 			}
 		}
 
-		&::after {
+		.busy-indicator {
+			display: block;
 			box-sizing: border-box;
-			content: '\e74f';
-			font-family: 'ionicons';
 			color: $panel-spinner;
 			font-size: 120px;
 			// border: 14px dotted $panel-spinner;
-			border-radius: 50px;
+			// border-radius: 50px;
 			display: block;
 			position: absolute;
 			z-index: -1;
@@ -238,25 +237,25 @@
 			margin: auto;
 			width: 120px; //89px;
 			height: 120px; //89px;
-			animation-name: spin;
-			animation-duration: 2s;
-			animation-iteration-count: infinite;
-			animation-timing-function: linear;
-			transition: all 0.5s linear;
+			-webkit-animation-name: spin;
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+			-webkit-transition: all 0.5s linear;
 			opacity: 0;
 		}
 
 		&.busy {
-			transform: perspective(100px) translateZ(-10px);
+			-webkit-transform: perspective(100px) translate3d(0, 0, -10px);
 			opacity: 0.5;
 
-			&::after {
+			.busy-indicator {
 				z-index: 100;
 				opacity: 1;
 			}
 
 			button {
-				transform: translateY(0px);
+				-webkit-transform: translate3d(0, 0, 0);
 				opacity: 0.8;
 				// background-color: $theme-card;
 				// color: $theme-card-shadow;
@@ -270,11 +269,12 @@
 				}
 			}
 		}
-		&.error {
-			animation-name: shake;
-			animation-duration: 0.5s;
-			animation-delay: 0.5s;
-			animation-timing-function: linear;
+
+		&.invalid {
+			-webkit-animation-name: shake;
+			-webkit-animation-duration: 0.5s;
+			-webkit-animation-delay: 0.5s;
+			-webkit-animation-timing-function: linear;
 		}
 	}
 }

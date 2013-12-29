@@ -8,6 +8,7 @@ function forEachNode() {
 // Login code
 var LoginForm = {
 
+	// Initialize login panel
 	init: function () {
 		var form = document.forms["login"];
 		form["username"].addEventListener("input", LoginForm.validate.bind(null, form), false);
@@ -47,6 +48,7 @@ var LoginForm = {
 		}, false);
 	},
 
+	// Disable form
 	disable: function (form) {
 		form.classList.add("busy");
 		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
@@ -58,6 +60,7 @@ var LoginForm = {
 		form.querySelector("button").disabled = true;
 	},
 
+	// Enable form
 	enable: function (form) {
 		form.classList.remove("busy");
 		forEachNode(form.querySelectorAll(".split-button-group input"), function (el) {
@@ -69,22 +72,26 @@ var LoginForm = {
 		form.querySelector("button").disabled = false;
 	},
 
+	// What to do with the login response
 	responseHandler: function (error, form) {
 		if (error) {
 			// Error while logging in
 			// Allow input
 			LoginForm.enable(form);
-			form.classList.add("error");
+			form.classList.add("invalid");
 			setTimeout(function () {
-				form.classList.remove("error");
+				form.classList.remove("invalid");
 			}, 3000);
 			console.error("Unable to log in.");
 			return;
 		}
 		// Login succeeded
-		router.navigate("dashboard", {trigger: true, replace: true});
+		// Setup students
+		// Navigate to dashboard of first student
+		// router.navigate("dashboard", {trigger: true, replace: true});
 	},
 
+	// Check to see if credentials are of a valid format
 	validate: function (form) {
 		var ID_isNumeric = !form["id"].validity.patternMismatch;
 		var ID_isLongEnough = form["id"].value.length >= 6;

@@ -1,12 +1,13 @@
 TEMPLATE_ENGINE = dustc
 TEMPLATE_SRC_DIR = views
 TEMPLATE_OUT_DIR = compiled_templates
-TEMPLATES = banner.dust dashboard.dust details.dust fullyear.dust header.dust login.dust main.dust notifications.dust preferences.dust sidebar.dust
+TEMPLATES = banner.dust dashboard.dust course.dust fullyear.dust header.dust login.dust main.dust notifications.dust preferences.dust sidebar.dust
 
-SCRIPT_COMPILER = dart2js
+SCRIPT_COMPILER = tsc
+SCRIPT_COMPILER_OPTS = -t 'ES5'
 SCRIPT_SRC_DIR = scripts
 SCRIPT_OUT_DIR = compiled_scripts
-SCRIPTS = login.js
+SCRIPTS = login.ts
 
 STYLE_ENGINE = sass
 STYLE_SRC_DIR = styles
@@ -25,8 +26,7 @@ $(STYLES):
 scripts: clear_scripts $(SCRIPTS)
 
 $(SCRIPTS):
-	# $(SCRIPT_COMPILER) $(SCRIPT_SRC_DIR)/$@.$(SCRIPT_EXT) -o $(SCRIPT_OUT_DIR)/$@.js
-	# cat $(SCRIPT_OUT_DIR)/$@.js >> dist/js/scripts.js
+	$(SCRIPT_COMPILER) $(SCRIPT_COMPILER_OPTS) $(SCRIPT_SRC_DIR)/$@ --out $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@))
 	cat $(SCRIPT_OUT_DIR)/$(addsuffix .js, $(basename $@)) >> dist/js/scripts.js
 
 templates: clear_templates $(TEMPLATES)

@@ -8,7 +8,7 @@ Please keep in mind that because this is for a Chrome extension, only Chrome is 
 
 ## Installation
 
-You will need to run `bower install` in order to install all dependencies. This means you need [Bower](http://bower.io).
+You will need to run `bower install` in order to install all dependencies. This means you need [Bower](http://bower.io). You will also need [TypeScript](http://www.typescriptlang.org/) if you plan on editing scripts.
 
 ## Usage
 
@@ -33,6 +33,9 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 * Lock screen
 * Grade editing
 * Mobile mockups
+* Convert templates to Handlebars
+* Forgot password
+* Cancel login/error messages
 * Homepage
 * Investigate standalone chrome app
 * GPA calculations page
@@ -45,6 +48,7 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 
 ## In Progress
 
+* Fix login animations
 * Change pixel font sizes to em
 * Use variables for layout
 * Preferences
@@ -66,6 +70,7 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 * Preview sample student in browser (without downloading extension, requires Chrome)
 * Grade "watchdog" --- catches numerous missing grades or low/failed assessments, alerts the user
 * Allow users to set goals for each course, can show progress towards goal and how individual grades affect achieving that goal
+* Maybe instead of having the user enter the student ID upon login, we could just scrape all the siblings' IDs from HAC then have all the students auto-populated in the student switcher. This would simplify things a bit for the user, and is easier for parents who may not know their student's ID.
 
 
 ## Things Users Would Like to See Improved
