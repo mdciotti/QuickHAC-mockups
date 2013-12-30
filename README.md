@@ -30,6 +30,7 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 * Exam/semester grades?
 * Dashboard (year at a glance)
 * Icon
+* Redo student switching (like gmail on iOS)
 * Add student menu
 * Lock screen
 * Grade editing
