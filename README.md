@@ -26,13 +26,13 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 
 ## To Do
 
+* Mobile mockups
 * Exam/semester grades?
 * Dashboard (year at a glance)
 * Icon
 * Add student menu
 * Lock screen
 * Grade editing
-* Mobile mockups
 * Convert templates to Handlebars
 * Forgot password
 * Cancel login/error messages
@@ -48,13 +48,14 @@ If you add a new style, make sure to add an `@import` rule for it in the `main.s
 
 ## In Progress
 
-* Fix login animations
+* Welcome screen (select students and app showcase)
 * Change pixel font sizes to em
 * Use variables for layout
 * Preferences
 
 ## Done
 
+* Fix login animations
 * Cycle switching
 * Login screen
 * Student switching menu
