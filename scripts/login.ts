@@ -8,6 +8,11 @@ function forEachNode() {
 // Login code
 var LoginForm = {
 
+	forgotPasswordURL: {
+		"RRISD": "https://accesscenter.roundrockisd.org/homeaccess/Register/ForgotCredentials.aspx",
+		"AISD": "https://gradespeed.austinisd.org/pc/ForgotPW.aspx?DistrictID=227901"
+	},
+
 	// Initialize login panel
 	init: function () {
 		var form = document.forms["login"];
@@ -17,10 +22,13 @@ var LoginForm = {
 
 		forEachNode(document.querySelectorAll(".split-button-group input"), function (el) {
 			el.addEventListener("change", function (e) {
+
+				var district = el.value;
 				var username = form["username"].value;
 				var password = form["password"].value;
 				var id = form["id"].value;
 
+				// Focus next empty input field
 				if (username === "") {
 					form["username"].focus();
 				} else if (password === "") {
@@ -30,6 +38,14 @@ var LoginForm = {
 				} else {
 					form.querySelector("button").focus();
 				}
+
+				// Change forgot password link
+				var forgotPasswordLink = form.querySelector("a.forgot-password");
+
+				if (LoginForm.forgotPasswordURL.hasOwnProperty(district)) {
+					forgotPasswordLink.setAttribute("href", LoginForm.forgotPasswordURL[district]);
+				}
+
 			}, false);
 		});
 
