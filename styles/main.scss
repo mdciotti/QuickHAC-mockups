@@ -5,15 +5,15 @@ $fa-font-path: '../fonts/FontAwesome';
 @import '../fonts/Lato/Lato.css';
 @import '../fonts/ionicons/ionicons.css';
 
-@import '_variables.scss';
-@import '_login.scss';
-@import '_components.scss';
-@import '_banner.scss';
-@import '_sidebar.scss';
-@import '_header.scss';
-@import '_notifications.scss';
-@import '_content.scss';
-@import '_dashboard.scss';
+@import 'variables.scss';
+@import 'login.scss';
+@import 'components.scss';
+@import 'banner.scss';
+@import 'sidebar.scss';
+@import 'header.scss';
+@import 'notifications.scss';
+@import 'content.scss';
+@import 'dashboard.scss';
 
 * { box-sizing: border-box; }
 
