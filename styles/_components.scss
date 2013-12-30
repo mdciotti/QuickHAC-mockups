@@ -185,3 +185,12 @@ i {
 	&[data-color="pomegranate"] { color: $pomegranate !important; }
 	&[data-color="concrete"] { color: $concrete !important; }
 }
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: $gutter-width / 2;
+	text-align: center;
+}

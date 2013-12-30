@@ -843,46 +843,50 @@
 @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); } }
 
-.login { flex: 0 0 auto; display: flex; align-self: center; align-items: center; }
+.login { flex: 0 0 auto; display: flex; align-self: center; align-items: flex-start; }
 .login .logo { flex: 0 0 auto; margin-right: 32px; text-align: center; }
 .login .logo i { font-size: 128px; display: block; height: 128px; color: rgba(255, 255, 255, 0.5); }
 .login .logo .message-welcome { display: block; font-size: 24px; margin-top: 16px; color: #ecf0f1; line-height: 1.2; }
-.login .login-panel { position: relative; display: flex; flex-direction: column; align-items: center; -webkit-transform: perspective(100px) translate3d(0, 0, 0); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
-.login .login-panel .split-button-group { display: flex; flex: 0 0 auto; order: 1; padding: 16px 16px 0 16px; background-color: rgba(255, 255, 255, 0.25); width: 100%; }
-.login .login-panel .split-button-group label { flex: 1 1 auto; }
-.login .login-panel .split-button-group label:hover span { background: rgba(255, 255, 255, 0.25); color: #ecf0f1; }
-.login .login-panel .split-button-group label input[type="radio"] { display: none; }
-.login .login-panel .split-button-group label input[type="radio"]:disabled + span { color: #bdc3c7; }
-.login .login-panel .split-button-group label input[type="radio"]:checked + span { background-color: #ecf0f1; color: #3498db; }
-.login .login-panel .split-button-group label span { display: block; text-align: center; font-size: 16px; font-weight: 500; padding: 8px 12px; outline: none; color: #ecf0f1; letter-spacing: 1px; }
-.login .login-panel .input-group { box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25); background-color: #ecf0f1; padding: 16px; position: relative; width: 100%; flex: 0 0 auto; order: 2; }
-.login .login-panel .input-group::before { content: ''; display: block; position: absolute; left: -16px; top: 0; bottom: 0; margin: auto; width: 0; height: 0; border-right: 16px solid #ecf0f1; border-top: 16px solid transparent; border-bottom: 16px solid transparent; }
-.login .login-panel .input-group > label { display: block; position: relative; margin-bottom: 12px; }
-.login .login-panel .input-group > label input + i { display: block; float: right; position: absolute; top: 0; bottom: 0; right: 12px; margin: auto; height: 1em; width: 1em; color: #bdc3c7; font-size: 1.5em; }
-.login .login-panel .input-group > label input:focus + i { color: #3498db; }
-.login .login-panel .input-group > label input.invalid + i { color: #e74c3c; }
-.login .login-panel .input-group > label:last-child { margin-bottom: 0; }
-.login .login-panel input[type="text"], .login .login-panel input[type="password"] { width: 100%; background-color: white; border: 2px solid white; font-size: 16px; color: #423c38; font-weight: 300; padding: 8px 36px 8px 12px; font-family: "Helvetica Neue", Helvetica; display: block; outline: none; }
-.login .login-panel input[type="text"]:disabled, .login .login-panel input[type="password"]:disabled { background-color: #ecf0f1; border-color: #bdc3c7; color: #bdc3c7; }
-.login .login-panel input[type="text"]:focus, .login .login-panel input[type="password"]:focus { border-color: #3498db; }
-.login .login-panel input[type="text"].invalid, .login .login-panel input[type="password"].invalid { border-color: #e74c3c; }
-.login .login-panel button { flex: 0 0 auto; order: 3; display: block; font-size: 16px; font-weight: 300; padding: 12px 16px; border: none; background-color: #3498db; opacity: 0.5; margin: 0; width: calc(100% - 32px); color: #ecf0f1; outline: none; box-shadow: 0 2px rgba(0, 0, 0, 0.15); -webkit-transform: translate3d(0, -16px, 0); -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
-.login .login-panel button .available { display: block; }
-.login .login-panel button .busy { display: none; }
-.login .login-panel button:focus:not(:hover) { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
-.login .login-panel button:hover:not(:disabled) { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
-.login .login-panel button:active:not(:disabled) { background-color: #2980b9; color: #ecf0f1; }
-.login .login-panel button:disabled { -webkit-transform: translate3d(0, -100%, 0); background-color: #3498db; color: #ecf0f1; opacity: 0; }
-.login .login-panel a { padding: 8px 0; color: #ecf0f1; display: block; text-align: center; outline: none; flex: 1 1 auto; order: 3; opacity: 0.75; text-decoration: none; }
-.login .login-panel a:hover, .login .login-panel a:focus { text-decoration: underline; opacity: 1; }
-.login .login-panel a:active { color: #3498db; }
-.login .login-panel .busy-indicator { display: block; box-sizing: border-box; color: #3498db; font-size: 120px; display: block; position: absolute; z-index: -1; top: 0; left: 0; bottom: 0; right: 0; margin: auto; width: 120px; height: 120px; -webkit-animation-name: spin; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transition: all 0.5s linear; opacity: 0; }
-.login .login-panel.busy { -webkit-transform: perspective(100px) translate3d(0, 0, -10px); opacity: 0.5; }
-.login .login-panel.busy .busy-indicator { z-index: 100; opacity: 1; }
-.login .login-panel.busy button { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
-.login .login-panel.busy button .available { display: none; }
-.login .login-panel.busy button .busy { display: block; }
-.login .login-panel.invalid { -webkit-animation-name: shake; -webkit-animation-duration: 0.5s; -webkit-animation-delay: 0.5s; -webkit-animation-timing-function: linear; }
+.login .panel { position: relative; display: flex; flex-direction: column; align-items: center; -webkit-transform: perspective(100px) translate3d(0, 0, 0); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+.login .panel .split-button-group { display: flex; flex: 0 0 auto; order: 1; padding: 16px 16px 0 16px; background-color: rgba(255, 255, 255, 0.25); width: 100%; }
+.login .panel .split-button-group label { flex: 1 1 auto; }
+.login .panel .split-button-group label:hover span { background: rgba(255, 255, 255, 0.25); color: #ecf0f1; }
+.login .panel .split-button-group label input[type="radio"] { display: none; }
+.login .panel .split-button-group label input[type="radio"]:disabled + span { color: #bdc3c7; }
+.login .panel .split-button-group label input[type="radio"]:checked + span { background-color: #ecf0f1; color: #3498db; }
+.login .panel .split-button-group label span { display: block; text-align: center; font-size: 16px; font-weight: 500; padding: 8px 12px; outline: none; color: #ecf0f1; letter-spacing: 1px; }
+.login .panel .input-group { box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25); background-color: #ecf0f1; padding: 16px; position: relative; width: 100%; flex: 0 0 auto; order: 2; }
+.login .panel .input-group::before { content: ''; display: block; position: absolute; left: -16px; top: 0; bottom: 0; margin: auto; width: 0; height: 0; border-right: 16px solid #ecf0f1; border-top: 16px solid transparent; border-bottom: 16px solid transparent; }
+.login .panel .input-group > label { display: block; position: relative; margin-bottom: 12px; }
+.login .panel .input-group > label input + i { display: block; float: right; position: absolute; top: 0; bottom: 0; right: 12px; margin: auto; height: 1em; width: 1em; color: #bdc3c7; font-size: 1.5em; }
+.login .panel .input-group > label input:focus + i { color: #3498db; }
+.login .panel .input-group > label input.invalid + i { color: #e74c3c; }
+.login .panel .input-group > label:last-child { margin-bottom: 0; }
+.login .panel .input-group a { color: #95a5a6; display: block; font-size: 12.8px; text-decoration: none; text-align: center; }
+.login .panel .input-group a:hover { text-decoration: underline; }
+.login .panel input[type="text"], .login .panel input[type="password"] { width: 100%; background-color: white; border: 2px solid white; font-size: 16px; color: #423c38; font-weight: 300; padding: 8px 36px 8px 12px; font-family: "Helvetica Neue", Helvetica; display: block; outline: none; }
+.login .panel input[type="text"]:disabled, .login .panel input[type="password"]:disabled { background-color: #ecf0f1; border-color: #bdc3c7; color: #bdc3c7; }
+.login .panel input[type="text"]:focus, .login .panel input[type="password"]:focus { border-color: #3498db; }
+.login .panel input[type="text"].invalid, .login .panel input[type="password"].invalid { border-color: #e74c3c; }
+.login .panel button { flex: 0 0 auto; order: 3; display: block; font-size: 16px; font-weight: 300; padding: 12px 16px; border: none; background-color: #3498db; opacity: 0.5; margin: 0; width: calc(100% - 32px); color: #ecf0f1; outline: none; box-shadow: 0 2px rgba(0, 0, 0, 0.15); -webkit-transform: translate3d(0, -16px, 0); -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+.login .panel button .available { display: block; }
+.login .panel button .busy { display: none; }
+.login .panel button:focus:not(:hover) { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
+.login .panel button:hover:not(:disabled) { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
+.login .panel button:active:not(:disabled) { background-color: #2980b9; color: #ecf0f1; }
+.login .panel button:disabled { -webkit-transform: translate3d(0, -100%, 0); background-color: #3498db; color: #ecf0f1; opacity: 0; }
+.login .panel > a { padding: 8px 0; color: #ecf0f1; display: block; text-align: center; outline: none; flex: 1 1 auto; order: 3; opacity: 0.75; text-decoration: none; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25); }
+.login .panel > a:hover, .login .panel > a:focus { text-decoration: underline; opacity: 1; }
+.login .panel > a:active { color: #3498db; }
+.login .panel .busy-indicator { display: block; box-sizing: border-box; color: #3498db; font-size: 120px; display: block; position: absolute; z-index: -1; top: 0; left: 0; bottom: 0; right: 0; margin: auto; width: 120px; height: 120px; -webkit-animation-name: spin; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -webkit-transition: all 0.5s linear; opacity: 0; }
+.login .panel.busy { -webkit-transform: perspective(100px) translate3d(0, 0, -10px); opacity: 0.5; }
+.login .panel.busy .busy-indicator { z-index: 100; opacity: 1; }
+.login .panel.busy button { -webkit-transform: translate3d(0, 0, 0); opacity: 0.8; }
+.login .panel.busy button .available { display: none; }
+.login .panel.busy button .busy { display: block; }
+.login .panel.invalid { -webkit-animation-name: shake; -webkit-animation-duration: 0.5s; -webkit-animation-delay: 0.5s; -webkit-animation-timing-function: linear; }
+
+.login + footer { color: #ecf0f1; }
 
 .app-name { font-weight: 100; font-size: 26px; display: block; }
 .app-name span { font-weight: 700; }
@@ -928,6 +932,8 @@ i[data-color="sun-flower"] { color: #f1c40f !important; }
 i[data-color="carrot"] { color: #e67e22 !important; }
 i[data-color="pomegranate"] { color: #c0392b !important; }
 i[data-color="concrete"] { color: #95a5a6 !important; }
+
+footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; text-align: center; }
 
 .banner { font-size: 16px; flex: 0 0 auto; padding: 8px; text-align: center; background-color: #ecf0f1; color: #423c38; }
 .banner.promotion { background-color: #3498db; background-image: url("../images/banner.png"); background-size: 720px 48px; color: #ecf0f1; }

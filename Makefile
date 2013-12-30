@@ -1,13 +1,13 @@
 TEMPLATE_ENGINE = dustc
 TEMPLATE_SRC_DIR = views
 TEMPLATE_OUT_DIR = compiled_templates
-TEMPLATES = banner.dust dashboard.dust course.dust header.dust login.dust main.dust notifications.dust preferences.dust sidebar.dust
+TEMPLATES = banner.dust dashboard.dust course.dust header.dust login.dust main.dust notifications.dust preferences.dust sidebar.dust welcome.dust
 
 SCRIPT_COMPILER = tsc
 SCRIPT_COMPILER_OPTS = -t 'ES5'
 SCRIPT_SRC_DIR = scripts
 SCRIPT_OUT_DIR = compiled_scripts
-SCRIPTS = login.ts
+SCRIPTS = common.ts login.ts welcome.ts
 
 STYLE_ENGINE = sass
 STYLE_SRC_DIR = styles

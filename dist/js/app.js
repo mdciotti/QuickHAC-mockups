@@ -1,5 +1,6 @@
 var baseJSON = {
 	"global": {
+		"version": "3.0",
 		"cycle": 1,
 		"studentName": "Gordon Freeman",
 		"studentID": "101010"
@@ -142,6 +143,7 @@ var Router = Backbone.Router.extend({
 	routes: {
 		"login": "login",
 		"logout": "logout",
+		"welcome/:page": "welcome",
 		"student/:studentID/dashboard": "dashboard",
 		"preferences": "preferences",
 		"preferences/:category": "preferences",
@@ -150,13 +152,39 @@ var Router = Backbone.Router.extend({
 	},
 
 	login: function () {
-		mainView.display("login", {}, LoginForm.init);
+		var data = deepClone(baseJSON);
+
+		mainView.display("login", data, LoginForm.init);
 	},
 
 	logout: function () {
 		// Sign out code
 
 		router.navigate("login", {trigger: true, replace: true});
+	},
+
+	welcome: function (page) {
+		var data = deepClone(baseJSON);
+
+		data["students"] = [
+			{
+				"id": "101010",
+				"name": "Gordon Freeman",
+				"school": "Massachssetts Institute of Technology"
+			},
+			{
+				"id": "313337",
+				"name": "Eli Vance",
+				"school": "Massachssetts Institute of Technology"
+			},
+			{
+				"id": "011235",
+				"name": "Alyx Vance",
+				"school": "Harvard University"
+			}
+		];
+
+		mainView.display("welcome", data, Welcome.init);
 	},
 
 	dashboard: function (studentID) {
@@ -213,7 +241,16 @@ var Router = Backbone.Router.extend({
 			"sections": [
 				{
 					"title": "Refresh",
-					"icon": "icon-refresh"
+					"icon": "icon-refresh",
+					"options": [
+						{
+							"title": "Refresh Interval",
+							"caption": "Time in minutes in between automatic refresh.",
+							"type": "number",
+							"id": "refresh_interval",
+							"value": 60
+						}
+					]
 				},
 				{
 					"title": "Notifications",
