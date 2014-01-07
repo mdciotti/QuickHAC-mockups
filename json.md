@@ -28,7 +28,7 @@ These show up as buttons in the action bar (header). Each page has its own actio
 
 ## Banner
 
-Information regarding a banner (advertisement). `active` (boolean) indicates whether it should be shown, `type` (either `"promotion"`, `"alert"`, or `"generic"`) indicates the purpose (and color) of the banner. `url` is optional, and will make the banner into a link if present. `text` should be html-escaped;
+Information regarding a banner (advertisement). `active` (boolean) indicates whether it should be shown, `type` (either `"promotion"`, `"alert"`, or `"generic"`) indicates the purpose (and color) of the banner. `url` is optional, and will make the banner into a link if present. `text` should be html-escaped.
 
 ```json
 {
