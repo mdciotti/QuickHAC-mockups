@@ -41,23 +41,19 @@
 				<thead>
 					<tr>
 						<th>Assignment</th>
-						<th class="date">Date Assigned</th>
-						<th class="date">Date Due</th>
-						<th class="numeric">Points Earned</th>
-						<th class="numeric">Weight</th>
-						<th class="numeric">Points Possible</th>
+						<th class="date">Assigned</th>
+						<th class="date">Due</th>
+						<th class="numeric">Points</th>
 						<th>Notes</th>
 					</tr>
 				</thead>
 				<tbody>
 					{#assignments}
-					<tr>
+					<tr class="{#flags} {?dropped}dropped{/dropped} {?extraCredit}extra-credit{/extraCredit} {?hasNote}has-note{/hasNote} {?missing}missing{/missing}{/flags}">
 						<td>{title}</td>
 						<td class="date">{dateAssigned}</td>
 						<td class="date">{dateDue}</td>
-						<td class="numeric">{ptsEarned}</td>
-						<td class="numeric">{weight}</td>
-						<td class="numeric">{ptsPossible}</td>
+						<td class="numeric">{ptsEarned}{?weight}<span class="soft"> &times; {weight}</span>{/weight}</td>
 						<td>{note}</td>
 					</tr>
 					{/assignments}

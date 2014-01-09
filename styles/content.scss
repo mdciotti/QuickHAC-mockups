@@ -239,6 +239,10 @@
 			}
 		}
 
+		.soft {
+			color: $card-text-light;
+		}
+
 		table {
 			border-collapse: collapse;
 			boder-spacing: none;
@@ -259,19 +263,47 @@
 				}
 			}
 
+			tr.dropped {
+				text-decoration: line-through;
+				color: $card-text-light;
+			}
+
+			tr.missing {
+				color: $card-text-alert;
+			}
+
+			tr.extra-credit {
+				color: $card-text-highlight;
+			}
+
 			td {
 
-				&:first-child {
-					width: 25%;
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4) {
+					width: 10%;
 				}
 
 				&:last-child {
-					width: 15%;
+					width: 25%;
 				}
 			}
 
 			td, th {
-				&.numeric, &.date {
+				padding: 0 ($gutter-width / 2);
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+
+				&.numeric {
+					text-align: right;
+				}
+				&.date {
 					text-align: center;
 				}
 			}

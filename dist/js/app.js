@@ -315,7 +315,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Permutations Worksheet",
@@ -325,7 +330,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Combinations Worksheet",
@@ -335,7 +345,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Combinatorics and Probability Worksheet",
@@ -345,17 +360,27 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Review",
 							"dateDue": "Oct 2",
 							"dateAssigned": "Sep 25",
-							"ptsEarned": 100,
+							"ptsEarned": 0,
 							"ptsPossible": 100,
 							"weight": 1,
-							"note": "",
-							"extraCredit": false
+							"note": "(Missing)",
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": true,
+								"missing": true
+							}
 						}
 					]
 				},
@@ -372,7 +397,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Permutations Quiz",
@@ -382,7 +412,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						},
 						{
 							"title": "Combinations Quiz",
@@ -391,8 +426,13 @@ var Router = Backbone.Router.extend({
 							"ptsEarned": 90,
 							"ptsPossible": 100,
 							"weight": 1,
-							"note": "",
-							"extraCredit": false
+							"note": "(Dropped)",
+							"flags": {
+								"extraCredit": false,
+								"dropped": true,
+								"hasNote": true,
+								"missing": false
+							}
 						},
 						{
 							"title": "Combinatorics and Probability Quiz",
@@ -402,7 +442,27 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
+						},
+						{
+							"title": "Extra Credit",
+							"dateDue": "Oct 2",
+							"dateAssigned": "Sep 25",
+							"ptsEarned": 90,
+							"ptsPossible": 100,
+							"weight": 1,
+							"note": "",
+							"flags": {
+								"extraCredit": true,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						}
 					]
 				},
@@ -419,7 +479,12 @@ var Router = Backbone.Router.extend({
 							"ptsPossible": 100,
 							"weight": 1,
 							"note": "",
-							"extraCredit": false
+							"flags": {
+								"extraCredit": false,
+								"dropped": false,
+								"hasNote": false,
+								"missing": false
+							}
 						}
 					]
 				}
